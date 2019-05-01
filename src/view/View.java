@@ -18,6 +18,7 @@ public class View {
      */
     public View (Controller contr){
         this.change = new Amount(10);
+        
         this.contr = contr;
     }
 
