@@ -18,6 +18,7 @@ public class Printer {
      * @param receipt
      */
     public static void print(Receipt receipt){
-        System.out.println("THIS IS THE RECEIPT BEEING PRINTED");
+        System.out.println("THIS IS THE RECEIPT BEEING PRINTED: \n");
+        receipt.toString();
     }
 }
