@@ -36,6 +36,7 @@ public class Receipt {
         appendLine(builder, salesTime.toString());
         endSection(builder);
 
+
         // Insert support for printing the items.
 
         return builder.toString();
