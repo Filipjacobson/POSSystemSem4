@@ -9,6 +9,7 @@ public class Discount {
     private final double discountConstant = 0.95;
 
     /**
+     * Creates a new instance.
      *
      * @param customerIdentification
      */

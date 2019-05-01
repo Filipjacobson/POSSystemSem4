@@ -7,6 +7,7 @@ public class ItemIdentifier {
     private String itemIdentifier;
 
     /**
+     * Creates a new instance.
      *
      * @param itemIdentifier
      */

@@ -5,7 +5,6 @@ import util.ItemIdentifier;
 /**
  * Contains information about one particular item.
  */
-
 public final class ItemDTO {
     private final String description;
     private final double price;
@@ -13,6 +12,7 @@ public final class ItemDTO {
     private final double VATrate;
 
     /**
+     * Creates a new instance.
      *
      * @param description
      * @param price

@@ -10,7 +10,7 @@ import integration.ItemDTO;
 public class Data {
 
     /**
-     *
+     * Creates a new instance.
      */
     public Data(){
 

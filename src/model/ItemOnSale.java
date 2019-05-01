@@ -11,6 +11,7 @@ public class ItemOnSale {
     private int quantity;
 
     /**
+     * Creates a new instance.
      *
      * @param itemDTO
      * @param quantity

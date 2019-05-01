@@ -7,7 +7,7 @@ import model.Receipt;
  */
 public class Printer {
     /**
-     *
+     * Creates a new instance.
      */
     public Printer(){
 

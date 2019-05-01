@@ -7,6 +7,7 @@ public class CustomerIdentification {
     private String customerIdentification;
 
     /**
+     * Creates a new instance.
      *
      * @param customerIdentification
      */

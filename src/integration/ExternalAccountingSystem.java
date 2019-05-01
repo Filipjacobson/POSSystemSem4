@@ -6,7 +6,7 @@ package integration;
 public class ExternalAccountingSystem {
 
     /**
-     *
+     * Creates a new instance.
      */
     public ExternalAccountingSystem(){
 

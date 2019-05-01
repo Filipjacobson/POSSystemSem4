@@ -11,7 +11,7 @@ public class Total {
     private boolean addedDiscount = false;
 
     /**
-     *
+     * Creates a new instance.
      */
     public Total(){
 

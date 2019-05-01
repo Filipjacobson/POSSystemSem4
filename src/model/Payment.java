@@ -15,6 +15,7 @@ public class Payment {
     private Amount change;
 
     /**
+     * Creates a new instance.
      *
      * @param saleDTO
      */

@@ -7,6 +7,7 @@ public class Amount {
     private double amount;
 
     /**
+     * Creates a new instance.
      *
      * @param amount
      */

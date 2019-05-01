@@ -5,7 +5,7 @@ package integration;
  */
 public class InventorySystem {
     /**
-     *
+     * Creates a new instance.
      */
     public InventorySystem (){
 

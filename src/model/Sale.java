@@ -23,7 +23,7 @@ public class Sale {
     private int numberOfPurchasedItems = 0;
 
     /**
-     *
+     * Creates a new instance.
      */
     public Sale (){
         // To give the program some sample data we add these to List<ItemOnSale> list

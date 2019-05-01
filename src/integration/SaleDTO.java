@@ -19,6 +19,7 @@ public final class SaleDTO {
     private final Amount change;
 
     /**
+     * Creates a new instance.
      *
      * @param total
      * @param list

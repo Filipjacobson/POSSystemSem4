@@ -16,6 +16,7 @@ public class DBHandler {
     private InventorySystem invSys;
 
     /**
+     * Creates a new instance.
      *
      * @param saleDTO
      */
