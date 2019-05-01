@@ -22,7 +22,10 @@ public class Receipt {
         this.saleDTO = saleDTO;
     }
 
-
+    /**
+     *
+     * @return
+     */
     public String createReceiptString(){
         StringBuilder builder = new StringBuilder();
         appendLine(builder, "Sale number ");
@@ -38,11 +41,20 @@ public class Receipt {
         return builder.toString();
     }
 
+    /**
+     *
+     * @param builder
+     * @param text
+     */
     private void appendLine(StringBuilder builder, String text){
         builder.append(text);
         builder.append("\n");
     }
 
+    /**
+     *
+     * @param builder
+     */
     private void endSection(StringBuilder builder){
         builder.append("\n");
     }

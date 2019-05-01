@@ -22,10 +22,11 @@ public class Sale {
     private List<ItemOnSale> list = new ArrayList<>();
     private int numberOfPurchasedItems = 0;
 
+    /**
+     *
+     */
     public Sale (){
-
-
-        // To give the program some sample data we add
+        // To give the program some sample data we add these to List<ItemOnSale> list
         list.add(new ItemOnSale(new ItemDTO("Milk", 10, new ItemIdentifier(), 12), 2));
         list.add(new ItemOnSale(new ItemDTO("Lemonade", 12, new ItemIdentifier(), 12), 1));
 
@@ -34,6 +35,11 @@ public class Sale {
         payment = new Payment(saleDTO);
     }
 
+    /**
+     *
+     * @param itemOnSale
+     * @return
+     */
     public SaleDTO addItem(ItemOnSale itemOnSale){
         //Check if item already is on sale, if no: add item, if yes: update quantity.
         for(ItemOnSale in : list){
@@ -50,15 +56,28 @@ public class Sale {
         return saleDTO;
     }
 
+    /**
+     *
+     * @return
+     */
     public Sale getSale(){
         return this;
     }
 
+    /**
+     *
+     * @param discount
+     */
     public void applyDiscount(Discount discount){
         total.applyDiscount(discount);
         // add support to update receipt with details about the discount if needed.
     }
 
+    /**
+     *
+     * @param paidAmount
+     * @return
+     */
     public Amount pay(Amount paidAmount){
         this.change = payment.pay(paidAmount);
         return change;

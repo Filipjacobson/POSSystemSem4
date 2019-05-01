@@ -7,6 +7,9 @@ import util.Amount;
 import java.util.List;
 import java.time.LocalDateTime;
 
+/**
+ *
+ */
 public final class SaleDTO {
     private final Total total;
     private final List<ItemOnSale> list;
@@ -15,6 +18,14 @@ public final class SaleDTO {
     private final LocalDateTime salesTime;
     private final Amount change;
 
+    /**
+     *
+     * @param total
+     * @param list
+     * @param lastAddedItem
+     * @param cashier
+     * @param change
+     */
     public SaleDTO(Total total, List<ItemOnSale> list, ItemOnSale lastAddedItem, String cashier, Amount change){
         this.total = total;
         this.list = list;
@@ -24,6 +35,10 @@ public final class SaleDTO {
         this.change = change;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<ItemOnSale> getList(){
         return this.list;
     }

@@ -21,6 +21,9 @@ public class View {
         this.contr = contr;
     }
 
+    /**
+     *
+     */
     public void runFakeSale(){
         contr.startNewSale();
         this.change = contr.pay(paidAmount);

@@ -14,12 +14,20 @@ public class Payment {
     private Amount paidAmount;
     private Amount change;
 
-
+    /**
+     *
+     * @param saleDTO
+     */
     public Payment(SaleDTO saleDTO){
         this.saleDTO = saleDTO;
         this.receipt = new Receipt(saleDTO);
     }
 
+    /**
+     *
+     * @param paidAmount
+     * @return
+     */
     public Amount pay(Amount paidAmount){
         this.paidAmount = paidAmount;
         total.subtract(paidAmount); // add guard so that this valuue does not become negative.
@@ -27,8 +35,6 @@ public class Payment {
 
         System.out.println("Payment approved!");
         System.out.println("Printing receipt... Please wait.");
-
-        // Create a new receipt from saleDTO information
 
         printer.print(receipt);
         return change;

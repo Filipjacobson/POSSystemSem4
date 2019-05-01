@@ -7,6 +7,9 @@ import integration.Printer;
 import view.View;
 import integration.DBHandler;
 
+/**
+ *
+ */
 public class Main {
     /**
      * Starts the application.
