@@ -27,7 +27,7 @@ public class Receipt {
      * @return
      */
     @Override
-    public String toStringg(){
+    public String toString(){
         StringBuilder builder = new StringBuilder();
 
         builder.append("-_-_-_-_-_-_-_-_-_-_-");

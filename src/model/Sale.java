@@ -40,9 +40,9 @@ public class Sale {
      */
     public SaleDTO addItem(ItemOnSale itemOnSale){
         //Check if item already is on sale, if no: add item, if yes: update quantity.
-        for(ItemOnSale in : list){
-            if(in.getItemDTO() == itemOnSale.getItemDTO()){
-                in.addQuantity(itemOnSale.getQuantity());
+        for(ItemOnSale item : list){
+            if(item.getItemDTO() == itemOnSale.getItemDTO()){
+                item.addQuantity(itemOnSale.getQuantity());
                 System.out.println("Item already found on sale. The total quantity of item " + in.toString() + " is now " + in.getQuantity());
             } else{
                 list.add(itemOnSale);
