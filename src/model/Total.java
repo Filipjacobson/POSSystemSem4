@@ -41,4 +41,8 @@ public class Total {
         }
 
     }
+
+    public double getTotal(){
+        return total;
+    }
 }

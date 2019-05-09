@@ -15,8 +15,9 @@ public final class SaleDTO {
     private final List<ItemOnSale> list;
     private final ItemOnSale lastAddedItem;
     private final String cashier;
-    private final LocalDateTime salesTime;
+    private final Amount amountPaid;
     private final Amount change;
+
 
     /**
      * Creates a new instance.
@@ -25,22 +26,44 @@ public final class SaleDTO {
      * @param list
      * @param lastAddedItem
      * @param cashier
-     * @param change
      */
-    public SaleDTO(Total total, List<ItemOnSale> list, ItemOnSale lastAddedItem, String cashier, Amount change){
+    public SaleDTO(Total total, List<ItemOnSale> list, ItemOnSale lastAddedItem, String cashier, Amount amountPaid){
         this.total = total;
         this.list = list;
         this.lastAddedItem = lastAddedItem;
         this.cashier = cashier;
-        this.salesTime = LocalDateTime.now();
-        this.change = change;
+        this.amountPaid = amountPaid;
     }
 
     /**
      *
      * @return
      */
-    public List<ItemOnSale> getList(){
+    public List<ItemOnSale> getItemOnSaleList(){
         return this.list;
+    }
+
+    public Total getTotal(){
+        return total;
+    }
+
+    public String getCashier(){
+        return cashier;
+    }
+
+    public int getTotalNumberOfItems(){
+        int i = 0;
+        for (ItemOnSale item : list){
+            i++;
+        }
+        return i;
+    }
+
+    public Amount getAmountPaid(){
+        return amountPaid;
+    }
+
+    public Amount getChange(){
+        return null;
     }
 }

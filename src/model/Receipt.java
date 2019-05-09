@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  */
 
 public class Receipt {
-    private final SaleDTO saleDTO;
+    private SaleDTO saleDTO;
 
     /**
      * Creates a new instance.
@@ -26,37 +26,57 @@ public class Receipt {
      *
      * @return
      */
-    public String createReceiptString(){
+    @Override
+    public String toStringg(){
         StringBuilder builder = new StringBuilder();
-        appendLine(builder, "Sale number ");
-        endSection(builder);
 
+        builder.append("-_-_-_-_-_-_-_-_-_-_-");
+        builder.append(System.getProperty("line.separator"));
+
+        builder.append("------ THIS IS THE RECEIPT ------");
+        builder.append(System.getProperty("line.separator"));
+
+        builder.append(" >> SALES INFORMATION << ");
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Organisation number: 556951-1111");
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Organisation number: Tomtegatan 10, 111 10 Tomteby");
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Cashier serving you: " + saleDTO.getCashier());
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Sale number: 1");
+        builder.append(System.getProperty("line.separator"));
         LocalDateTime salesTime = LocalDateTime.now();
-        builder.append("Time: ");
-        appendLine(builder, salesTime.toString());
-        endSection(builder);
+        builder.append("Time: " + salesTime);
+        builder.append(System.getProperty("line.separator"));
+
+        builder.append(" >> ITEMS << ");
+        for(ItemOnSale item : saleDTO.getItemOnSaleList()){
+            builder.append(item);
+            builder.append(System.getProperty("line.separator"));
+        }
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Total number of items: " + saleDTO.getTotalNumberOfItems());
+        builder.append(System.getProperty("line.separator"));
+
+        builder.append(" >> TRANSACTION << ");
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Total: " + saleDTO.getTotal().getTotal());
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Amount paid: " + saleDTO.getAmountPaid().getAmount());
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Amount paid: " + saleDTO.getChange().getAmount());
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Payment method: Card");
+        builder.append(System.getProperty("line.separator"));
 
 
-        // Insert support for printing the items.
+        builder.append("------      THANK  YOU      ------");
+        builder.append(System.getProperty("line.separator"));
 
+        builder.append("-_-_-_-_-_-_-_-_-_-_-");
         return builder.toString();
     }
 
-    /**
-     *
-     * @param builder
-     * @param text
-     */
-    private void appendLine(StringBuilder builder, String text){
-        builder.append(text);
-        builder.append("\n");
-    }
 
-    /**
-     *
-     * @param builder
-     */
-    private void endSection(StringBuilder builder){
-        builder.append("\n");
-    }
 }

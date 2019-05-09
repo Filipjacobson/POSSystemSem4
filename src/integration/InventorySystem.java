@@ -1,5 +1,6 @@
 package integration;
 
+import model.ItemOnSale;
 import util.ItemIdentifier;
 
 import java.util.ArrayList;
@@ -37,12 +38,9 @@ public class InventorySystem {
 
 
     /**
+     * Dummy class to update Inventory System. Doesn't do anything.
      *
      * @param saleDTO
      */
-    public void updateInventorySystem(SaleDTO saleDTO){
-        System.out.println("InventorySystem updated!");
-
-        // to be fixed
-    }
+    public void updateInventorySystem(SaleDTO saleDTO){ }
 }
