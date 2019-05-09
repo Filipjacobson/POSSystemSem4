@@ -16,6 +16,7 @@ public class Sale {
     private Payment payment;
     private Total total;
     private SaleDTO saleDTO;
+    private ItemDTO lastItemScanned;
     private Amount paidAmount;
     private Amount change;
 
@@ -26,9 +27,6 @@ public class Sale {
      * Creates a new instance.
      */
     public Sale (){
-        // To give the program some sample data we add these to List<ItemOnSale> list
-        list.add(new ItemOnSale(new ItemDTO("Milk", 10, new ItemIdentifier(), 12), 2));
-        list.add(new ItemOnSale(new ItemDTO("Lemonade", 12, new ItemIdentifier(), 12), 1));
 
         saleDTO = new SaleDTO(total, list, list.get(list.size()-1), "Hasse", change);
         total = new Total();
@@ -62,6 +60,18 @@ public class Sale {
      */
     public Sale getSale(){
         return this;
+    }
+
+    public Total getTotal(){
+        return total;
+    }
+
+    public ItemDTO getLastItemScanned(){
+        return lastItemScanned;
+    }
+
+    public Payment getPayment(){
+        return payment;
     }
 
     /**

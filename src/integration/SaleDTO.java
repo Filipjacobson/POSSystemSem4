@@ -33,6 +33,7 @@ public final class SaleDTO {
         this.lastAddedItem = lastAddedItem;
         this.cashier = cashier;
         this.amountPaid = amountPaid;
+        this.change = null;
     }
 
     /**
