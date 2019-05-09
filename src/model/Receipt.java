@@ -16,7 +16,7 @@ public class Receipt {
     /**
      * Creates a new instance.
      *
-     * @param saleDTO The sale provided by this receipt.
+     * @param saleDTO Takes parameter and stores it in the object.
      */
     public Receipt(SaleDTO saleDTO){
         this.saleDTO = saleDTO;

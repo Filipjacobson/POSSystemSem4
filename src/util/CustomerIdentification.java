@@ -9,7 +9,7 @@ public class CustomerIdentification {
     /**
      * Creates a new instance.
      *
-     * @param customerIdentification
+     * @param customerIdentification Takes parameter and stores it in the object.
      */
     public CustomerIdentification(String customerIdentification){
         this.customerIdentification = customerIdentification;

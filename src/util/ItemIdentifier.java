@@ -4,14 +4,14 @@ package util;
  *
  */
 public class ItemIdentifier {
-    private String itemIdentifier;
+    private int itemIdentifier;
 
     /**
      * Creates a new instance.
      *
      * @param itemIdentifier
      */
-    public ItemIdentifier(String itemIdentifier){
+    public ItemIdentifier(int itemIdentifier){
         this.itemIdentifier = itemIdentifier;
     }
 
@@ -19,7 +19,7 @@ public class ItemIdentifier {
      *
      * @return
      */
-    public String getItemIdentifier(){
+    public int getItemIdentifier(){
         return this.itemIdentifier;
     }
 }

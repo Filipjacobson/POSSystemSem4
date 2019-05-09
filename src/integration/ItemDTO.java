@@ -20,9 +20,9 @@ public final class ItemDTO {
      * @param VATrate
      */
     public ItemDTO(String description, int price, ItemIdentifier identifier, double VATrate){
+        this.description = description;
         this.price = price;
         this.identifier = identifier;
-        this.description = description;
         this.VATrate = VATrate;
     }
 
@@ -32,6 +32,10 @@ public final class ItemDTO {
      */
     public ItemDTO getItemDTO(){
         return this;
+    }
+
+    public ItemIdentifier getItemDTOIdentifier() {
+        return identifier;
     }
 
     /**
