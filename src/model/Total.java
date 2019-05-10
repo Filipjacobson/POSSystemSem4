@@ -1,5 +1,6 @@
 package model;
 
+import integration.ItemDTO;
 import util.Discount;
 import integration.SaleDTO;
 
@@ -19,12 +20,10 @@ public class Total {
 
     /**
      *
-     * @param saleDTO
+     * @param
      */
-    public void calculateTotal(SaleDTO saleDTO){
-        for(ItemOnSale in : saleDTO.getList()){
-            this.total = in.getQuantity() * in.getItemPrice();
-        }
+    public void reCalculateTotal(ItemOnSale item){
+        this.total += item.getItemDTO().getItemDTOPrice();
     }
 
     /**

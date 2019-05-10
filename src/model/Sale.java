@@ -35,24 +35,22 @@ public class Sale {
 
     /**
      *
-     * @param itemOnSale
+     * @param itemBeeingAddedToSale
      * @return
      */
-    public SaleDTO addItem(ItemOnSale itemOnSale){
-        //Check if item already is on sale, if no: add item, if yes: update quantity.
-        for(ItemOnSale item : list){
-            if(item.getItemDTO() == itemOnSale.getItemDTO()){
-                item.addQuantity(itemOnSale.getQuantity());
-                System.out.println("Item already found on sale. The total quantity of item " + in.toString() + " is now " + in.getQuantity());
-            } else{
-                list.add(itemOnSale);
-                System.out.println("Added following item to sale: " + itemOnSale.toString());
-                numberOfPurchasedItems++;
+    public void addItem(ItemOnSale itemBeeingAddedToSale){
+        for(ItemOnSale itemInList : list){
+            if(itemInList.getItemDTO().equals(itemBeeingAddedToSale)){
+                lastItemScanned = itemBeeingAddedToSale.getItemDTO();
+                itemInList.incrementQuantity();
+                return;
             }
         }
-        total.calculateTotal(saleDTO);
-        return saleDTO;
+        list.add(itemBeeingAddedToSale);
+        lastItemScanned = itemBeeingAddedToSale.getItemDTO();
+        total.reCalculateTotal(itemBeeingAddedToSale);
     }
+
 
     /**
      *

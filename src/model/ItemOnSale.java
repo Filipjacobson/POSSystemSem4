@@ -47,10 +47,9 @@ public class ItemOnSale {
 
     /**
      *
-     * @param quantity
      */
-    public void addQuantity(int quantity){
-        this.quantity =+ quantity;
+    public void incrementQuantity(){
+        this.quantity++;
     }
 
 

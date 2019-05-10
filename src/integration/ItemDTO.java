@@ -34,6 +34,10 @@ public final class ItemDTO {
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public ItemIdentifier getItemDTOIdentifier() {
         return identifier;
     }
@@ -44,5 +48,19 @@ public final class ItemDTO {
      */
     public double getItemDTOPrice(){
         return this.price;
+    }
+
+    /**
+     * Used to test if the ItemDTOs are equal.
+     *
+     * @param otherObj
+     * @return
+     */
+    public boolean equals(Object otherObj){
+        if(otherObj == null) return false;
+        if (getClass() != otherObj.getClass()) return false;
+        ItemDTO otherCasted = (ItemDTO) otherObj;
+        if (!(this.identifier == otherCasted.identifier)) return false;
+        return true;
     }
 }
