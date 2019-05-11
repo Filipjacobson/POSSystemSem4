@@ -1,6 +1,7 @@
 package model;
 
 import integration.ItemDTO;
+import integration.Printer;
 import integration.SaleDTO;
 import util.ItemIdentifier;
 import util.Discount;
@@ -14,9 +15,10 @@ import java.util.List;
  */
 public class Sale {
     private Payment payment;
-    private Total total;
     private SaleDTO saleDTO;
     private ItemDTO lastItemScanned;
+    private Printer printer;
+    private Amount total;
     private Amount paidAmount;
     private Amount change;
 
@@ -28,9 +30,6 @@ public class Sale {
      */
     public Sale (){
 
-        saleDTO = new SaleDTO(total, list, list.get(list.size()-1), "Hasse", change);
-        total = new Total();
-        payment = new Payment(saleDTO);
     }
 
     /**
@@ -48,6 +47,8 @@ public class Sale {
         }
         list.add(itemBeeingAddedToSale);
         lastItemScanned = itemBeeingAddedToSale.getItemDTO();
+
+
         total.reCalculateTotal(itemBeeingAddedToSale);
     }
 
@@ -60,8 +61,8 @@ public class Sale {
         return this;
     }
 
-    public Total getTotal(){
-        return total;
+    public double getTotal(){
+        return total.getAmount();
     }
 
     public ItemDTO getLastItemScanned(){
@@ -81,13 +82,13 @@ public class Sale {
         // add support to update receipt with details about the discount if needed.
     }
 
-    /**
-     *
-     * @param paidAmount
-     * @return
-     */
-    public Amount pay(Amount paidAmount){
-        this.change = payment.pay(paidAmount);
-        return change;
+    public void addToPayment(Payment payment){
+        payment.calculateTotal(total);
+        this.payment = payment;
+    }
+
+    public void printReceipt(Printer printer){
+        Receipt receipt = new Receipt(new SaleDTO());
+        printer.print(receipt);
     }
 }

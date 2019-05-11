@@ -9,15 +9,11 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class SaleTest {
-    private CustomerIdentification customerIdentification;
-    private Discount discount;
-    private Total total;
+
 
     @Before
     public void setUp(){
-        this.customerIdentification = new CustomerIdentification("123");
-        this.discount = new Discount(customerIdentification);
-        this.total = new Total();
+
     }
 
     @After
@@ -27,7 +23,7 @@ public class SaleTest {
 
     @Test
     public void applyDiscount(Discount discount){
-        total.applyDiscount(discount);
+
     }
 
 }

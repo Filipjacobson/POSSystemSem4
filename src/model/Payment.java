@@ -22,26 +22,16 @@ public class Payment {
 
 
 
-    /**
-     *
-     * @param paidAmount
-     * @return
-     */
-    /*
-    public Amount pay(Amount paidAmount){
-        this.paidAmount = paidAmount;
-        total.subtract(paidAmount); // add guard so that this valuue does not become negative.
-
-        return change;
-    }
-    */
-
-    public Amount getTotal(){
-        return this.total;
+    public double getTotal(){
+        return this.total.getAmount();
     }
 
-    public Amount getPaidAmount(){
-        return this.paidAmount;
+    public double getPaidAmount(){
+        return this.paidAmount.getAmount();
+    }
+
+    public void calculateTotal(Amount total){
+
     }
 
 

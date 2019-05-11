@@ -61,11 +61,11 @@ public class Receipt {
 
         builder.append(" >> TRANSACTION << ");
         builder.append(System.getProperty("line.separator"));
-        builder.append("Total: " + saleDTO.getTotal().getTotal());
+        builder.append("Total: " + saleDTO.getTotal());
         builder.append(System.getProperty("line.separator"));
-        builder.append("Amount paid: " + saleDTO.getAmountPaid().getAmount());
+        builder.append("Amount paid: " + saleDTO.getAmountPaid());
         builder.append(System.getProperty("line.separator"));
-        builder.append("Amount paid: " + saleDTO.getChange().getAmount());
+        builder.append("Amount paid: " + saleDTO.getChange());
         builder.append(System.getProperty("line.separator"));
         builder.append("Payment method: Card");
         builder.append(System.getProperty("line.separator"));
