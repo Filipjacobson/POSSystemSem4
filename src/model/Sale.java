@@ -15,15 +15,10 @@ import java.util.List;
  */
 public class Sale {
     private Payment payment;
-    private SaleDTO saleDTO;
     private ItemDTO lastItemScanned;
-    private Printer printer;
     private Amount total;
-    private Amount paidAmount;
-    private Amount change;
 
     private List<ItemOnSale> list = new ArrayList<>();
-    private int numberOfPurchasedItems = 0;
 
     /**
      * Creates a new instance.
