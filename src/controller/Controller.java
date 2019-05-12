@@ -1,15 +1,9 @@
 package controller;
 
-import integration.DBHandler;
-import integration.Printer;
-import integration.SaleDTO;
-import integration.SystemCreator;
+import integration.*;
 import model.Sale;
 import model.ItemOnSale;
-import util.CustomerIdentification;
 import util.ItemIdentifier;
-import util.Amount;
-import util.Discount;
 
 /**
  *
@@ -45,25 +39,14 @@ public class Controller {
      * @param quantity
      * @return
      */
-    public SaleDTO addItem(ItemIdentifier itemIdentifier, int quantity){
-        return sale.addItem(new ItemOnSale(dbhandl.getItemInformation(itemIdentifier), quantity));
-    }
-
-    /**
-     *
-     * @param customerIdentification
-     */
-    public void discountRequest(CustomerIdentification customerIdentification){
-        sale.applyDiscount(dbhandl.getCustomerDiscount(customerIdentification));
-    }
-
-    /**
-     *
-     * @param paidAmount
-     * @return
-     */
-    public Amount pay(Amount paidAmount){
-        return sale.pay(paidAmount);
+    public ItemDTO addItem(ItemIdentifier itemIdentifier, int quantity){
+        ItemDTO foundItem = dbhandl.getItemInformation(itemIdentifier);
+        if (foundItem != null){
+            sale.addItem(new ItemOnSale(foundItem, quantity));
+            return foundItem;
+        } else {
+            return null;
+        }
     }
 
     /**

@@ -20,8 +20,8 @@ public class AccountingSystem {
      *
      * @param
      */
-    public void updateAccountingSystem(SaleDTO saleDTOToAdd){
-        accountingSystemLog.add(saleDTOToAdd);
+    public void updateAccountingSystem(SaleDTO saleDTO){
+        accountingSystemLog.add(saleDTO);
     }
 
     public List<SaleDTO> getAccountingSystemLog(){

@@ -60,10 +60,15 @@ public final class SaleDTO {
     }
 
     public double getAmountPaid(){
-        return amountPaid.get;
+        return amountPaid.getAmount();
     }
 
     public Amount getChange(){
         return null;
+    }
+
+    @Override
+    public String toString(){
+
     }
 }

@@ -13,7 +13,7 @@ public class InventorySystem {
     private List<ItemDTO> inventoryList = new ArrayList<>();
 
     private final int GROCERY_VAT_RATE = 12;
-    private final int TOBACCO_VAT_RATE = 25;
+    private final int TOBACCO_VAT_RATE = 50;
 
     /**
      * Creates a new instance.
@@ -22,6 +22,13 @@ public class InventorySystem {
         addFakeItems();
     }
 
+
+    /**
+     * Searches the list of all items in inventory.
+     *
+     * @param itemIdentifier Used to fetch the correct ItemDTO.
+     * @return An ItemDTO which matched the requested itemIdentifier.
+     */
     public ItemDTO getItemFromInventory(ItemIdentifier itemIdentifier){
         for(ItemDTO itemDTO : inventoryList)
             if (itemIdentifier == itemDTO.getItemDTOIdentifier()) {

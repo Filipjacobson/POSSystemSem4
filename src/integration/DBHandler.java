@@ -1,8 +1,6 @@
 package integration;
 
-import util.CustomerIdentification;
 import util.ItemIdentifier;
-import util.Discount;
 import data.Data;
 
 /**
@@ -12,8 +10,8 @@ import data.Data;
 public class DBHandler {
     private Data data;
     private SaleDTO saleDTO;
-    private ExternalAccountingSystem extAccSys;
-    private InventorySystem invSys;
+    private AccountingSystem accountingSystem;
+    private InventorySystem inventorySystem;
 
     /**
      * Creates a new instance.
@@ -23,30 +21,19 @@ public class DBHandler {
     public DBHandler(SaleDTO saleDTO){
         this.saleDTO = saleDTO;
         data = new Data();
-        extAccSys = new ExternalAccountingSystem();
-        invSys = new InventorySystem();
+        accountingSystem = new AccountingSystem();
+        inventorySystem = new InventorySystem();
     }
 
     /**
+     * Calls to the database stop in the integration layer. However, we will for this task have a list
+     * of the whole inventory available in the integration layer. The method finds the item asked for.
      *
-     * @param itemIdentifier
-     * @return
+     * @param itemIdentifier Used to fetch the correct ItemDTO.
+     * @return An ItemDTO which matched the requested itemIdentifier.
      */
     public ItemDTO getItemInformation(ItemIdentifier itemIdentifier){
-        //Calls to the database stop in the integration layer. Here we would normally have a call to the class Data.
-        ItemDTO itemDTO = data.getItemInformationData(itemIdentifier);
-        return itemDTO;
-    }
-
-    /**
-     *
-     * @param customerIdentification
-     * @return
-     */
-    public Discount getCustomerDiscount(CustomerIdentification customerIdentification){
-        //Calls to the database stop in the integration layer. Here we would normally have a call to the class Data.
-        Discount discount = new Discount(customerIdentification);
-        return discount;
+        return inventorySystem.getItemFromInventory(itemIdentifier);
     }
 
     /**
@@ -54,7 +41,7 @@ public class DBHandler {
      * @param saleDTO
      */
     public void updateSystems(SaleDTO saleDTO){
-        extAccSys.updateExternalAccountingSystem(saleDTO);
-        invSys.updateInventorySystem(saleDTO);
+        accountingSystem.updateAccountingSystem(saleDTO);
+        inventorySystem.updateInventorySystem(saleDTO);
     }
 }

@@ -4,7 +4,6 @@ import integration.ItemDTO;
 import integration.Printer;
 import integration.SaleDTO;
 import util.ItemIdentifier;
-import util.Discount;
 import util.Amount;
 
 import java.util.ArrayList;
@@ -29,22 +28,22 @@ public class Sale {
 
     /**
      *
-     * @param itemBeeingAddedToSale
+     * @param itemBeingAddedToSale
      * @return
      */
-    public void addItem(ItemOnSale itemBeeingAddedToSale){
+    public void addItem(ItemOnSale itemBeingAddedToSale){
         for(ItemOnSale itemInList : list){
-            if(itemInList.getItemDTO().equals(itemBeeingAddedToSale)){
-                lastItemScanned = itemBeeingAddedToSale.getItemDTO();
+            if(itemInList.getItemDTO().equals(itemBeingAddedToSale)){
+                lastItemScanned = itemBeingAddedToSale.getItemDTO();
                 itemInList.incrementQuantity();
                 return;
             }
         }
-        list.add(itemBeeingAddedToSale);
-        lastItemScanned = itemBeeingAddedToSale.getItemDTO();
+        list.add(itemBeingAddedToSale);
+        lastItemScanned = itemBeingAddedToSale.getItemDTO();
 
 
-        total.reCalculateTotal(itemBeeingAddedToSale);
+        total.reCalculateTotal(itemBeingAddedToSale);
     }
 
 
@@ -68,14 +67,6 @@ public class Sale {
         return payment;
     }
 
-    /**
-     *
-     * @param discount
-     */
-    public void applyDiscount(Discount discount){
-        total.applyDiscount(discount);
-        // add support to update receipt with details about the discount if needed.
-    }
 
     public void addToPayment(Payment payment){
         payment.calculateTotal(total);

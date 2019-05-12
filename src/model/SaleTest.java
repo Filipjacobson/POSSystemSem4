@@ -1,8 +1,5 @@
 package model;
 
-import util.CustomerIdentification;
-import util.Discount;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,8 +19,6 @@ public class SaleTest {
     }
 
     @Test
-    public void applyDiscount(Discount discount){
 
-    }
 
 }
