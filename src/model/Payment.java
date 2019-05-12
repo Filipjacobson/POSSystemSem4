@@ -31,7 +31,7 @@ public class Payment {
     }
 
     public void calculateTotal(Amount total){
-
+        this.total = new Amount(total);
     }
 
 

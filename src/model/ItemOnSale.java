@@ -1,6 +1,7 @@
 package model;
 
 import integration.ItemDTO;
+import util.Amount;
 import util.ItemIdentifier;
 
 /**
@@ -42,7 +43,11 @@ public class ItemOnSale {
      * @return
      */
     public double getItemPrice(){
-        return itemDTO.getItemDTOPrice();
+        return this.itemDTO.getItemDTOPrice();
+    }
+
+    public Amount getItemPriceAsAmount(){
+        return this.itemDTO.getItemPriceAsAmount();
     }
 
     /**
@@ -57,15 +62,15 @@ public class ItemOnSale {
      *
      * @return
      */
+    @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
-
-        builder.append(itemDTO.toString());
-        builder.append("\n");
-
-        builder.append("Quantity: ");
-        builder.append(quantity);
-
+        builder.append(itemDTO.getDescription() + "\t");
+        builder.append("* " + quantity + "\t");
+        builder.append("á pris: " + itemDTO.getItemDTOPrice() + "\t");
+        builder.append(itemDTO.getItemDTOPrice()*quantity + " kr ");
+        builder.append("(VAT: " + itemDTO.getVATRate() + "% )");
+        builder.append(System.getProperty("line.separator"));
         return builder.toString();
     }
 }

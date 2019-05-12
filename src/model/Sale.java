@@ -3,21 +3,19 @@ package model;
 import integration.ItemDTO;
 import integration.Printer;
 import integration.SaleDTO;
-import util.ItemIdentifier;
 import util.Amount;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * SALE
+ * Holds information about the sale.
  */
 public class Sale {
-    private Payment payment;
-    private ItemDTO lastItemScanned;
-    private Amount total;
-
     private List<ItemOnSale> list = new ArrayList<>();
+    private Payment payment;
+    private ItemDTO lastAddedItem;
+    private Amount total;
 
     /**
      * Creates a new instance.
@@ -27,23 +25,33 @@ public class Sale {
     }
 
     /**
+     * Adds an item to the sale.
      *
-     * @param itemBeingAddedToSale
+     * @param itemBeingAddedToSale The item to be added.
      * @return
      */
     public void addItem(ItemOnSale itemBeingAddedToSale){
         for(ItemOnSale itemInList : list){
-            if(itemInList.getItemDTO().equals(itemBeingAddedToSale)){
-                lastItemScanned = itemBeingAddedToSale.getItemDTO();
+            if(itemInList.getItemDTO().equals(itemBeingAddedToSale.getItemDTO())){
+                lastAddedItem = itemBeingAddedToSale.getItemDTO();
                 itemInList.incrementQuantity();
+                this.total.add(itemBeingAddedToSale.getItemPriceAsAmount());
                 return;
             }
         }
         list.add(itemBeingAddedToSale);
-        lastItemScanned = itemBeingAddedToSale.getItemDTO();
+        lastAddedItem = itemBeingAddedToSale.getItemDTO();
+        this.total.add(itemBeingAddedToSale.getItemPriceAsAmount());
+    }
 
+    public void addPayment(Payment payment){
+        payment.calculateTotal(total);
+        this.payment = payment;
+    }
 
-        total.reCalculateTotal(itemBeingAddedToSale);
+    public void printReceipt(Printer printer){
+        Receipt receipt = new Receipt(new SaleDTO(this));
+        printer.print(receipt);
     }
 
 
@@ -55,26 +63,19 @@ public class Sale {
         return this;
     }
 
-    public double getTotal(){
-        return total.getAmount();
-    }
-
-    public ItemDTO getLastItemScanned(){
-        return lastItemScanned;
+    public List<ItemOnSale> getList() {
+        return list;
     }
 
     public Payment getPayment(){
         return payment;
     }
 
-
-    public void addToPayment(Payment payment){
-        payment.calculateTotal(total);
-        this.payment = payment;
+    public ItemDTO getLastAddedItem(){
+        return lastAddedItem;
     }
 
-    public void printReceipt(Printer printer){
-        Receipt receipt = new Receipt(new SaleDTO());
-        printer.print(receipt);
+    public Amount getTotal(){
+        return total;
     }
 }

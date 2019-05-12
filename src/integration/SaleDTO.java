@@ -1,55 +1,37 @@
 package integration;
 
 import model.ItemOnSale;
+import model.Payment;
+import model.Sale;
 import util.Amount;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * Holds information about the sale, as a DTO.
  */
 public final class SaleDTO {
-    private final List<ItemOnSale> list;
-    private final ItemOnSale lastAddedItem;
-    private final String cashier;
+    private List<ItemOnSale> list = new ArrayList<>();
+    private final Payment payment;
+    private final ItemDTO lastAddedItem;
     private final Amount total;
-    private final Amount amountPaid;
-    private final Amount change;
-
+    private final String cashier = "Jarko";
 
     /**
      * Creates a new instance.
-     *
-     * @param total
-     * @param list
-     * @param lastAddedItem
-     * @param cashier
      */
-    public SaleDTO(Amount total, List<ItemOnSale> list, ItemOnSale lastAddedItem, String cashier, Amount amountPaid){
-        this.total = total;
-        this.list = list;
-        this.lastAddedItem = lastAddedItem;
-        this.cashier = cashier;
-        this.amountPaid = amountPaid;
-        this.change = null;
+    public SaleDTO(Sale sale){
+        this.list = sale.getList();
+        this.payment = sale.getPayment();
+        this.lastAddedItem = sale.getLastAddedItem();
+        this.total = sale.getTotal();
     }
 
     /**
      *
      * @return
      */
-    public List<ItemOnSale> getItemOnSaleList(){
-        return this.list;
-    }
-
-    public double getTotal(){
-        return total.getAmount();
-    }
-
-    public String getCashier(){
-        return cashier;
-    }
-
     public int getTotalNumberOfItems(){
         int i = 0;
         for (ItemOnSale item : list){
@@ -58,16 +40,29 @@ public final class SaleDTO {
         return i;
     }
 
-    public double getAmountPaid(){
-        return amountPaid.getAmount();
+    public List<ItemOnSale> getItems() {
+        return list;
     }
 
-    public Amount getChange(){
-        return null;
+    public Payment getPayment(){
+        return payment;
+    }
+
+    public ItemDTO getLastAddedItem(){
+        return lastAddedItem;
+    }
+
+    public Amount getTotal(){
+        return total;
+    }
+
+    public String getCashier(){
+        return cashier;
     }
 
     @Override
     public String toString(){
-
+        StringBuilder builder = new StringBuilder();
+        return builder.toString();
     }
 }

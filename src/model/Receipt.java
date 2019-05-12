@@ -51,9 +51,13 @@ public class Receipt {
         builder.append(System.getProperty("line.separator"));
 
         builder.append(" >> ITEMS << ");
-        for(ItemOnSale item : saleDTO.getItemOnSaleList()){
+        int i = 1;
+        for(ItemOnSale item : saleDTO.getItems()){
+            builder.append("Item#"+i);
+            builder.append(System.getProperty("line.separator"));
             builder.append(item);
             builder.append(System.getProperty("line.separator"));
+            i++;
         }
         builder.append(System.getProperty("line.separator"));
         builder.append("Total number of items: " + saleDTO.getTotalNumberOfItems());
@@ -62,10 +66,6 @@ public class Receipt {
         builder.append(" >> TRANSACTION << ");
         builder.append(System.getProperty("line.separator"));
         builder.append("Total: " + saleDTO.getTotal());
-        builder.append(System.getProperty("line.separator"));
-        builder.append("Amount paid: " + saleDTO.getAmountPaid());
-        builder.append(System.getProperty("line.separator"));
-        builder.append("Amount paid: " + saleDTO.getChange());
         builder.append(System.getProperty("line.separator"));
         builder.append("Payment method: Card");
         builder.append(System.getProperty("line.separator"));

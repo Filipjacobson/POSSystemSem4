@@ -1,5 +1,6 @@
 package integration;
 
+import util.Amount;
 import util.ItemIdentifier;
 
 /**
@@ -48,6 +49,18 @@ public final class ItemDTO {
      */
     public double getItemDTOPrice(){
         return this.price;
+    }
+
+    public Amount getItemPriceAsAmount(){
+        return (new Amount(this.price));
+    }
+
+    public String getDescription(){
+        return this.description;
+    }
+
+    public double getVATRate(){
+        return this.VATrate;
     }
 
     /**

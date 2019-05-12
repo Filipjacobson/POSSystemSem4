@@ -9,10 +9,19 @@ public class Amount {
     /**
      * Creates a new instance.
      *
-     * @param amount Takes parameter and stores it in the object.
+     * @param amount Takes double and stores it in the object.
      */
     public Amount(double amount){
         this.amount = amount;
+    }
+
+    /**
+     * Creates a new instance.
+     *
+     * @param amount Takes Amount and stores it in the object.
+     */
+    public Amount(Amount amount){
+        this.amount = amount.getAmount();
     }
 
     /**
@@ -27,9 +36,19 @@ public class Amount {
      * Used to subtract one amount with another.
      *
      * @param amount Takes an amount to subtract with.
-     * @return Returns the difference between the amount instance and the parameter.
+     * @return Returns the difference of the subtracted values.
      */
     public Amount subtract(Amount amount){
         return (new Amount(this.amount - amount.getAmount()));
+    }
+
+    /**
+     * Used to add one amount with another.
+     *
+     * @param amount Takes an amount to add with.
+     * @return Returns the sum of the added values.
+     */
+    public Amount add(Amount amount){
+        return (new Amount(this.amount + amount.getAmount()));
     }
 }

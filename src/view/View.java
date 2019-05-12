@@ -1,14 +1,15 @@
 package view;
 
 import controller.Controller;
+import integration.SaleDTO;
 import util.Amount;
+import util.ItemIdentifier;
 
 /**
  *
  */
 public class View {
     private Controller contr;
-    private Amount change;
     private Amount paidAmount;
 
     /**
@@ -17,7 +18,6 @@ public class View {
      * @param contr The controller that is used for all operations.
      */
     public View (Controller contr){
-        this.change = new Amount(10);
         this.contr = contr;
     }
 
@@ -25,9 +25,16 @@ public class View {
      *
      */
     public void runFakeSale(){
-        contr.startNewSale();
-        this.change = contr.pay(paidAmount);
-        System.out.println("Started new sale");
+        SaleDTO saleDTO = contr.startNewSale();
+
+        saleDTO = contr.addItem(1234, 1);
+        saleDTO = contr.addItem(2345, 1);
+        saleDTO = contr.addItem(3456, 1);
+        System.out.println(saleDTO);
+        System.out.println(System.getProperty("line.separator"));
+
+        Amount paidAmount = new Amount(1000);
+        contr.pay();
    }
 }
 

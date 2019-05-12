@@ -18,8 +18,6 @@ public class Main {
         Controller contr = new Controller(systemCreator);
         View view = new View(contr);
         view.runFakeSale();
-
-
     }
 
 }
