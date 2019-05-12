@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * SALE
  */
 public class Sale {
     private Payment payment;

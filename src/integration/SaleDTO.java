@@ -9,7 +9,6 @@ import java.util.List;
  *
  */
 public final class SaleDTO {
-
     private final List<ItemOnSale> list;
     private final ItemOnSale lastAddedItem;
     private final String cashier;
