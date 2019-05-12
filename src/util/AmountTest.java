@@ -1,11 +1,13 @@
 package util;
 
+/*
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AmountTest {
+
 
     @Before
     public void setUp() throws Exception{
@@ -21,4 +23,6 @@ public class AmountTest {
     public void startNewSale(){
 
     }
+
 }
+*/
