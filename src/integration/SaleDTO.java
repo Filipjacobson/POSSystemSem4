@@ -60,7 +60,7 @@ public final class SaleDTO {
     }
 
     public double getAmountPaid(){
-        return amountPaid.getAmount();
+        return amountPaid.get;
     }
 
     public Amount getChange(){

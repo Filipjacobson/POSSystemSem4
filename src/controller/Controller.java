@@ -1,7 +1,9 @@
 package controller;
 
 import integration.DBHandler;
+import integration.Printer;
 import integration.SaleDTO;
+import integration.SystemCreator;
 import model.Sale;
 import model.ItemOnSale;
 import util.CustomerIdentification;
@@ -16,12 +18,17 @@ public class Controller {
     private Sale sale;
     private DBHandler dbhandl;
     private SaleDTO saleDTO;
+    private SystemCreator systemCreator;
 
     /**
      * Creates a new instance.
      *
      */
-    public Controller(){
+    public Controller(SystemCreator systemCreator){
+        this.systemCreator = systemCreator;
+
+
+
         dbhandl = new DBHandler(saleDTO);
     }
 
