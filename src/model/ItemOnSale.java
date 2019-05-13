@@ -65,15 +65,10 @@ public class ItemOnSale {
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
-        builder.append(itemDTO.getDescription() + "\t");
-
-
-        builder.append(System.getProperty("line.separator"));
-        builder.append("* " + quantity + "\t\t");
-        builder.append("á pris: " + itemDTO.getItemDTOPrice());
-        builder.append(System.getProperty("line.separator"));
-        builder.append("\t\t\t\t\t" + itemDTO.getItemDTOPrice().getAmount()*quantity + " kr ");
-        builder.append("(VAT: " + itemDTO.getVATRate() + "%)");
+        builder.append(itemDTO.getDescription() + "\t\t");
+        builder.append(quantity + " st * ");
+        builder.append(itemDTO.getItemDTOPrice() + "kr ");
+        builder.append("\t\t" + itemDTO.getItemDTOPrice().getAmount()*quantity + " kr ");
         builder.append(System.getProperty("line.separator"));
         return builder.toString();
     }

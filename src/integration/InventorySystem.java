@@ -41,8 +41,8 @@ public class InventorySystem {
     }
 
     private void addFakeItems(){
-        inventoryList.add(new ItemDTO("Milk 1l", new Amount(10), new ItemIdentifier(3456), GROCERY_VAT_RATE));
-        inventoryList.add(new ItemDTO("Lemonade 33cl", new Amount(12), new ItemIdentifier(2345), GROCERY_VAT_RATE));
+        inventoryList.add(new ItemDTO("Milk 1l                  ", new Amount(10), new ItemIdentifier(3456), GROCERY_VAT_RATE));
+        inventoryList.add(new ItemDTO("Lemonade 33cl            ", new Amount(12), new ItemIdentifier(2345), GROCERY_VAT_RATE));
         inventoryList.add(new ItemDTO("John Silver w/o filter 3p", new Amount(39), new ItemIdentifier(1234), TOBACCO_VAT_RATE));
         System.out.println("Fake items loaded successfully");
     }

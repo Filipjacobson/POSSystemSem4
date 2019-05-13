@@ -64,14 +64,12 @@ public class Receipt {
         builder.append(System.getProperty("line.separator"));
         builder.append("-------------------------");
         builder.append(System.getProperty("line.separator"));
-        int i = 1;
+        builder.append(System.getProperty("line.separator"));
         for(ItemOnSale item : saleDTO.getItems()){
-            builder.append("Item#"+i);
-            builder.append(System.getProperty("line.separator"));
             builder.append(item);
-            builder.append(System.getProperty("line.separator"));
-            i++;
         }
+        builder.append(System.getProperty("line.separator"));
+        builder.append("------");
         builder.append(System.getProperty("line.separator"));
         builder.append("Total number of items: " + saleDTO.getTotalNumberOfItems());
         builder.append(System.getProperty("line.separator"));
@@ -85,16 +83,34 @@ public class Receipt {
         builder.append(System.getProperty("line.separator"));
         builder.append("-------------------------");
         builder.append(System.getProperty("line.separator"));
-        builder.append("Total: " + saleDTO.getTotal());
+        builder.append("Subtotal: ");
         builder.append(System.getProperty("line.separator"));
-        builder.append("Payment method: Card");
+        builder.append("VAT 12%: ");
+        builder.append(System.getProperty("line.separator"));
+        builder.append("------");
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Total: \t\t\t" + saleDTO.getTotal() + " kr");
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Paid amount: \t"  + saleDTO.getPayment().getPaidAmount() + " kr");
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Payment method: Cash ");
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Change: \t\t" + saleDTO.getPayment().getChange() + " kr");
+        builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Payment approved");
         builder.append(System.getProperty("line.separator"));
 
-
+        builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
         builder.append("\n------      THANK  YOU      ------");
         builder.append(System.getProperty("line.separator"));
 
         builder.append("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+        builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
         return builder.toString();
     }
 

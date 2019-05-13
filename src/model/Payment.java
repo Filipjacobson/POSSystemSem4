@@ -20,14 +20,12 @@ public class Payment {
         this.paidAmount = paidAmount;
     }
 
-
-
-    public double getTotal(){
-        return this.total.getAmount();
-    }
-
     public double getPaidAmount(){
         return this.paidAmount.getAmount();
+    }
+
+    public double getChange(){
+        return this.paidAmount.subtract(this.total).getAmount();
     }
 
     public void calculateTotal(Amount total){
