@@ -8,7 +8,7 @@ import util.ItemIdentifier;
  */
 public final class ItemDTO {
     private final String description;
-    private final double price;
+    private final Amount price;
     private final ItemIdentifier identifier;
     private final double VATrate;
 
@@ -20,7 +20,7 @@ public final class ItemDTO {
      * @param identifier
      * @param VATrate
      */
-    public ItemDTO(String description, int price, ItemIdentifier identifier, double VATrate){
+    public ItemDTO(String description, Amount price, ItemIdentifier identifier, double VATrate){
         this.description = description;
         this.price = price;
         this.identifier = identifier;
@@ -39,7 +39,7 @@ public final class ItemDTO {
      *
      * @return
      */
-    public ItemIdentifier getItemDTOIdentifier() {
+    public ItemIdentifier getItemIdentifier() {
         return identifier;
     }
 
@@ -47,12 +47,12 @@ public final class ItemDTO {
      *
      * @return
      */
-    public double getItemDTOPrice(){
+    public Amount getItemDTOPrice(){
         return this.price;
     }
 
     public Amount getItemPriceAsAmount(){
-        return (new Amount(this.price));
+        return this.price;
     }
 
     public String getDescription(){
@@ -75,5 +75,16 @@ public final class ItemDTO {
         ItemDTO otherCasted = (ItemDTO) otherObj;
         if (!(this.identifier == otherCasted.identifier)) return false;
         return true;
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder builder = new StringBuilder();
+        builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
+        builder.append(this.getDescription());
+        builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
+        return builder.toString();
     }
 }

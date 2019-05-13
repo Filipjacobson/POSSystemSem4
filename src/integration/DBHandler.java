@@ -9,19 +9,16 @@ import data.Data;
  */
 public class DBHandler {
     private Data data;
-    private SaleDTO saleDTO;
     private AccountingSystem accountingSystem;
     private InventorySystem inventorySystem;
 
     /**
      * Creates a new instance.
-     *
-     * @param saleDTO
      */
-    public DBHandler(SaleDTO saleDTO){
-        this.saleDTO = saleDTO;
+    public DBHandler(){
         data = new Data();
         accountingSystem = new AccountingSystem();
+        System.out.println("Creating InventorySystem in DBhandler constructor");
         inventorySystem = new InventorySystem();
     }
 
@@ -33,6 +30,7 @@ public class DBHandler {
      * @return An ItemDTO which matched the requested itemIdentifier.
      */
     public ItemDTO getItemInformation(ItemIdentifier itemIdentifier){
+        System.out.println("Getting item information (in DBHandler)");
         return inventorySystem.getItemFromInventory(itemIdentifier);
     }
 

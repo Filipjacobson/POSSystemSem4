@@ -14,11 +14,11 @@ public class Main {
      * @param args The application does not take any command line parameters.
      */
     public static void main (String[]args){
+        System.out.println("Main started");
         SystemCreator systemCreator = new SystemCreator();
         Controller contr = new Controller(systemCreator);
         View view = new View(contr);
         view.runFakeSale();
     }
-
 }
 

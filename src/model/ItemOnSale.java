@@ -42,7 +42,7 @@ public class ItemOnSale {
      *
      * @return
      */
-    public double getItemPrice(){
+    public Amount getItemPrice(){
         return this.itemDTO.getItemDTOPrice();
     }
 
@@ -66,10 +66,14 @@ public class ItemOnSale {
     public String toString(){
         StringBuilder builder = new StringBuilder();
         builder.append(itemDTO.getDescription() + "\t");
-        builder.append("* " + quantity + "\t");
-        builder.append("á pris: " + itemDTO.getItemDTOPrice() + "\t");
-        builder.append(itemDTO.getItemDTOPrice()*quantity + " kr ");
-        builder.append("(VAT: " + itemDTO.getVATRate() + "% )");
+
+
+        builder.append(System.getProperty("line.separator"));
+        builder.append("* " + quantity + "\t\t");
+        builder.append("á pris: " + itemDTO.getItemDTOPrice());
+        builder.append(System.getProperty("line.separator"));
+        builder.append("\t\t\t\t\t" + itemDTO.getItemDTOPrice().getAmount()*quantity + " kr ");
+        builder.append("(VAT: " + itemDTO.getVATRate() + "%)");
         builder.append(System.getProperty("line.separator"));
         return builder.toString();
     }

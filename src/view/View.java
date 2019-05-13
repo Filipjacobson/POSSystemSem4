@@ -10,7 +10,7 @@ import util.ItemIdentifier;
  */
 public class View {
     private Controller contr;
-    private Amount paidAmount;
+    private SaleDTO saleDTO;
 
     /**
      * Creates a new instance.
@@ -25,16 +25,18 @@ public class View {
      *
      */
     public void runFakeSale(){
-        SaleDTO saleDTO = contr.startNewSale();
+        System.out.println("runFakeSale() has started in View");
+        contr.startNewSale();
 
-        saleDTO = contr.addItem(1234, 1);
+        saleDTO = contr.addItem(1234, 3);
+        System.out.println("2:");
         saleDTO = contr.addItem(2345, 1);
         saleDTO = contr.addItem(3456, 1);
         System.out.println(saleDTO);
         System.out.println(System.getProperty("line.separator"));
 
         Amount paidAmount = new Amount(1000);
-        contr.pay();
+        contr.pay(paidAmount);
    }
 }
 

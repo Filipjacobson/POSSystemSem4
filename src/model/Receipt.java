@@ -30,27 +30,40 @@ public class Receipt {
     public String toString(){
         StringBuilder builder = new StringBuilder();
 
-        builder.append("-_-_-_-_-_-_-_-_-_-_-");
+        builder.append("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
         builder.append(System.getProperty("line.separator"));
 
         builder.append("------ THIS IS THE RECEIPT ------");
         builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
 
+        builder.append("_________________________");
+        builder.append(System.getProperty("line.separator"));
         builder.append(" >> SALES INFORMATION << ");
+        builder.append(System.getProperty("line.separator"));
+        builder.append("-------------------------");
         builder.append(System.getProperty("line.separator"));
         builder.append("Organisation number: 556951-1111");
         builder.append(System.getProperty("line.separator"));
-        builder.append("Organisation number: Tomtegatan 10, 111 10 Tomteby");
+        builder.append("Organisation address: Tomtegatan 10, 111 10 Tomteby");
         builder.append(System.getProperty("line.separator"));
         builder.append("Cashier serving you: " + saleDTO.getCashier());
         builder.append(System.getProperty("line.separator"));
         builder.append("Sale number: 1");
         builder.append(System.getProperty("line.separator"));
         LocalDateTime salesTime = LocalDateTime.now();
-        builder.append("Time: " + salesTime);
+        builder.append("Date/time: " + salesTime);
+        builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
         builder.append(System.getProperty("line.separator"));
 
-        builder.append(" >> ITEMS << ");
+        builder.append("_________________________");
+        builder.append(System.getProperty("line.separator"));
+        builder.append("       >> ITEMS << ");
+        builder.append(System.getProperty("line.separator"));
+        builder.append("-------------------------");
+        builder.append(System.getProperty("line.separator"));
         int i = 1;
         for(ItemOnSale item : saleDTO.getItems()){
             builder.append("Item#"+i);
@@ -62,8 +75,15 @@ public class Receipt {
         builder.append(System.getProperty("line.separator"));
         builder.append("Total number of items: " + saleDTO.getTotalNumberOfItems());
         builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
 
-        builder.append(" >> TRANSACTION << ");
+        builder.append("_________________________");
+        builder.append(System.getProperty("line.separator"));
+        builder.append("    >> TRANSACTION << ");
+        builder.append(System.getProperty("line.separator"));
+        builder.append("-------------------------");
         builder.append(System.getProperty("line.separator"));
         builder.append("Total: " + saleDTO.getTotal());
         builder.append(System.getProperty("line.separator"));
@@ -71,10 +91,10 @@ public class Receipt {
         builder.append(System.getProperty("line.separator"));
 
 
-        builder.append("------      THANK  YOU      ------");
+        builder.append("\n------      THANK  YOU      ------");
         builder.append(System.getProperty("line.separator"));
 
-        builder.append("-_-_-_-_-_-_-_-_-_-_-");
+        builder.append("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
         return builder.toString();
     }
 

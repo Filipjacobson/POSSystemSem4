@@ -48,7 +48,14 @@ public class Amount {
      * @param amount Takes an amount to add with.
      * @return Returns the sum of the added values.
      */
-    public Amount add(Amount amount){
-        return (new Amount(this.amount + amount.getAmount()));
+    public void add(Amount amount){
+         this.amount = this.amount + amount.getAmount();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(this.getAmount());
+        return builder.toString();
     }
 }

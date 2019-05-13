@@ -15,7 +15,7 @@ public class Sale {
     private List<ItemOnSale> list = new ArrayList<>();
     private Payment payment;
     private ItemDTO lastAddedItem;
-    private Amount total;
+    private Amount total = new Amount (0);
 
     /**
      * Creates a new instance.
@@ -30,18 +30,25 @@ public class Sale {
      * @param itemBeingAddedToSale The item to be added.
      * @return
      */
-    public void addItem(ItemOnSale itemBeingAddedToSale){
+    public SaleDTO addItem(ItemOnSale itemBeingAddedToSale){
+        System.out.println("Trying to add the item found to the sale" + itemBeingAddedToSale.toString());
         for(ItemOnSale itemInList : list){
             if(itemInList.getItemDTO().equals(itemBeingAddedToSale.getItemDTO())){
+                System.out.println("Item already on sale, adding its quantity");
                 lastAddedItem = itemBeingAddedToSale.getItemDTO();
                 itemInList.incrementQuantity();
                 this.total.add(itemBeingAddedToSale.getItemPriceAsAmount());
-                return;
+                return new SaleDTO(this);
             }
         }
+        System.out.println("Item was not on sale, adding item");
         list.add(itemBeingAddedToSale);
+        System.out.println("Item added to sales list");
         lastAddedItem = itemBeingAddedToSale.getItemDTO();
-        this.total.add(itemBeingAddedToSale.getItemPriceAsAmount());
+        System.out.println("Last added item was updated");
+        total.add(itemBeingAddedToSale.getItemPriceAsAmount());
+
+        return new SaleDTO(this);
     }
 
     public void addPayment(Payment payment){

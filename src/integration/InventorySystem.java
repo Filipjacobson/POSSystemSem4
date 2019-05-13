@@ -1,6 +1,6 @@
 package integration;
 
-import model.ItemOnSale;
+import util.Amount;
 import util.ItemIdentifier;
 
 import java.util.ArrayList;
@@ -19,6 +19,7 @@ public class InventorySystem {
      * Creates a new instance.
      */
     public InventorySystem (){
+        System.out.println("Adding fake items");
         addFakeItems();
     }
 
@@ -30,17 +31,20 @@ public class InventorySystem {
      * @return An ItemDTO which matched the requested itemIdentifier.
      */
     public ItemDTO getItemFromInventory(ItemIdentifier itemIdentifier){
-        for(ItemDTO itemDTO : inventoryList)
-            if (itemIdentifier == itemDTO.getItemDTOIdentifier()) {
+        for(ItemDTO itemDTO : inventoryList){
+            if (itemIdentifier.equals(itemDTO.getItemIdentifier())) {
+                System.out.println("ItemIdentifier " + itemIdentifier + "found in inventory");
                 return itemDTO;
             }
+        }
         return null;
     }
 
     private void addFakeItems(){
-        inventoryList.add(new ItemDTO("Milk 1l", 10, new ItemIdentifier(3456), GROCERY_VAT_RATE));
-        inventoryList.add(new ItemDTO("Lemonade 33cl", 12, new ItemIdentifier(2345), GROCERY_VAT_RATE));
-        inventoryList.add(new ItemDTO("John Silver w/o filter 3p", 12, new ItemIdentifier(1234), TOBACCO_VAT_RATE));
+        inventoryList.add(new ItemDTO("Milk 1l", new Amount(10), new ItemIdentifier(3456), GROCERY_VAT_RATE));
+        inventoryList.add(new ItemDTO("Lemonade 33cl", new Amount(12), new ItemIdentifier(2345), GROCERY_VAT_RATE));
+        inventoryList.add(new ItemDTO("John Silver w/o filter 3p", new Amount(39), new ItemIdentifier(1234), TOBACCO_VAT_RATE));
+        System.out.println("Fake items loaded successfully");
     }
 
 

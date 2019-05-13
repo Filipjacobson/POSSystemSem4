@@ -21,18 +21,19 @@ public class Controller {
      */
     public Controller(SystemCreator systemCreator){
         this.accountingSystem = systemCreator.getAccountingSystem();
-        this.
-
-
-
-        dbhandl = new DBHandler(saleDTO);
+        this.dbhandl = new DBHandler();
+        this.inventorySystem = systemCreator.getInventorySystem();
+        this.printer = new Printer();
     }
 
     /**
+     * View initiates a new sale.
      *
+     * @return An object
      */
-    public SaleDTO startNewSale(){
-        return new SaleDTO(sale = new Sale());
+    public void startNewSale(){
+        System.out.println("Cashier starts new sale");
+        sale = new Sale();
     }
 
     /**
@@ -42,15 +43,24 @@ public class Controller {
      * @return
      */
     public SaleDTO addItem(int itemIdentifier, int quantity){
+        System.out.println("addItem() started in Controller");
         ItemDTO foundItem = dbhandl.getItemInformation(new ItemIdentifier(itemIdentifier));
         if (foundItem != null){
+            System.out.println("Found item");
             sale.addItem(new ItemOnSale(foundItem, quantity));
             return new SaleDTO(sale);
         } else {
+            System.out.println("Item NOT found.");
             return null;
         }
+
     }
 
+    /**
+     * Manages the payment process.
+     *
+     * @param paidAmount
+     */
     public void pay(Amount paidAmount){
         Payment payment = new Payment(paidAmount);
         sale.addPayment(payment);
