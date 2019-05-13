@@ -14,7 +14,6 @@ public class Controller {
     private Printer printer;
     private Sale sale;
 
-
     /**
      * Creates a new instance.
      *

@@ -22,6 +22,7 @@ public class ItemOnSale {
     }
 
     /**
+     * Gets the ItemDTO from the ItemOnSale.
      *
      * @return
      */
@@ -30,6 +31,7 @@ public class ItemOnSale {
     }
 
     /**
+     * Gets the quantity from the ItemOnSale.
      *
      * @return
      */
@@ -38,6 +40,7 @@ public class ItemOnSale {
     }
 
     /**
+     * Gets the price from the ItemOnSale.
      *
      * @return
      */
