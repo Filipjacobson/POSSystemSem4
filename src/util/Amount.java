@@ -62,4 +62,18 @@ public class Amount {
         builder.append(this.getAmount());
         return builder.toString();
     }
+
+    /**
+     * SUT: Used to test if the Amounts are equal.
+     *
+     * @param otherObj
+     * @return
+     */
+    public boolean equals(Object otherObj){
+        if(otherObj == null) return false;
+        if (getClass() != otherObj.getClass()) return false;
+        Amount otherCasted = (Amount) otherObj;
+        if (!(this.amount == otherCasted.amount)) return false;
+        return true;
+    }
 }

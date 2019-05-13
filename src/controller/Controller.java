@@ -5,7 +5,7 @@ import model.*;
 import util.*;
 
 /**
- *
+ * Controls and delegades the important tasks.
  */
 public class Controller {
     private AccountingSystem accountingSystem;
@@ -27,7 +27,7 @@ public class Controller {
     }
 
     /**
-     * View initiates a new sale.
+     * View initiates a new sale by calling this method.
      *
      * @return An object
      */
@@ -36,9 +36,10 @@ public class Controller {
     }
 
     /**
+     * Adds an item to the sale.
      *
      * @param itemIdentifier
-     * @param quantity
+     * @param quantity Number of items entered.
      * @return
      */
     public SaleDTO addItem(int itemIdentifier, int quantity){
@@ -65,7 +66,9 @@ public class Controller {
     }
 
     /**
+     * Updates the external systems. Called in the end of the sale.
      *
+     * @param saleDTO Sending the object to the DBHandler to broadcast the object to necessary systems.
      */
     private void updateSystems(SaleDTO saleDTO){
         dbhandl.updateSystems(saleDTO);

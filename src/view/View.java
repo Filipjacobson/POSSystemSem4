@@ -5,7 +5,7 @@ import integration.SaleDTO;
 import util.Amount;
 
 /**
- *
+ * View is in this program only presented as a simple class. Could in a real program be presented as a GUI.
  */
 public class View {
     private Controller contr;
@@ -14,26 +14,23 @@ public class View {
     /**
      * Creates a new instance.
      *
-     * @param contr The controller that is used for all operations.
+     * @param contr The controller that is used for managing the overall work, delegating the important tasks.
      */
     public View (Controller contr){
         this.contr = contr;
     }
 
     /**
-     *
+     * Run a fake sale. Faking the scanning of multiple items.
      */
     public void runFakeSale(){
-        System.out.println("runFakeSale() has started in View");
         contr.startNewSale();
-
         saleDTO = contr.addItem(1234, 3);
         saleDTO = contr.addItem(1234, 2);
         saleDTO = contr.addItem(2345, 1);
         saleDTO = contr.addItem(3456, 1);
         System.out.println(saleDTO);
         System.out.println(System.getProperty("line.separator"));
-
         Amount paidAmount = new Amount(500);
         contr.pay(paidAmount);
    }

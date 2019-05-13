@@ -20,7 +20,12 @@ public class AmountTest {
     }
 
     @Test
-    public void startNewSale(){
+    public void someTest(){
+        try{
+            someMethod();
+        } catch (Exception e){
+            Assert.fail("Exception " + e);
+        }
 
     }
 

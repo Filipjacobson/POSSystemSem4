@@ -26,14 +26,11 @@ public class Receipt {
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
-
         builder.append("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
         builder.append(System.getProperty("line.separator"));
-
         builder.append("------ THIS IS THE RECEIPT ------");
         builder.append(System.getProperty("line.separator"));
         builder.append(System.getProperty("line.separator"));
-
         builder.append("_________________________");
         builder.append(System.getProperty("line.separator"));
         builder.append(" >> SALES INFORMATION << ");
@@ -54,7 +51,6 @@ public class Receipt {
         builder.append(System.getProperty("line.separator"));
         builder.append(System.getProperty("line.separator"));
         builder.append(System.getProperty("line.separator"));
-
         builder.append("_________________________");
         builder.append(System.getProperty("line.separator"));
         builder.append("       >> ITEMS << ");
@@ -73,7 +69,6 @@ public class Receipt {
         builder.append(System.getProperty("line.separator"));
         builder.append(System.getProperty("line.separator"));
         builder.append(System.getProperty("line.separator"));
-
         builder.append("_________________________");
         builder.append(System.getProperty("line.separator"));
         builder.append("    >> TRANSACTION << ");
@@ -102,10 +97,8 @@ public class Receipt {
         builder.append(System.getProperty("line.separator"));
         builder.append(System.getProperty("line.separator"));
         builder.append(System.getProperty("line.separator"));
-
         builder.append("\n------      THANK  YOU      ------");
         builder.append(System.getProperty("line.separator"));
-
         builder.append("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
         builder.append(System.getProperty("line.separator"));
         builder.append(System.getProperty("line.separator"));

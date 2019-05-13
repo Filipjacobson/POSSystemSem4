@@ -35,6 +35,7 @@ public class ItemIdentifier {
     }
 
     /**
+     * SUT: Used to test if the ItemIdentifiers are equal.
      *
      * @param otherObj
      * @return

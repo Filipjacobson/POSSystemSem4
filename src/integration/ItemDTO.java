@@ -52,7 +52,7 @@ public final class ItemDTO {
     }
 
     /**
-     * Used to test if the ItemDTOs are equal.
+     * SUT: Used to test if the ItemDTOs are equal.
      *
      * @param otherObj
      * @return
