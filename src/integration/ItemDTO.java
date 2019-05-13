@@ -31,14 +31,6 @@ public final class ItemDTO {
      *
      * @return
      */
-    public ItemDTO getItemDTO(){
-        return this;
-    }
-
-    /**
-     *
-     * @return
-     */
     public ItemIdentifier getItemIdentifier() {
         return identifier;
     }
@@ -51,12 +43,12 @@ public final class ItemDTO {
         return this.price;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDescription(){
         return this.description;
-    }
-
-    public double getVATRate(){
-        return this.VATrate;
     }
 
     /**
@@ -71,16 +63,5 @@ public final class ItemDTO {
         ItemDTO otherCasted = (ItemDTO) otherObj;
         if (!(this.identifier == otherCasted.identifier)) return false;
         return true;
-    }
-
-    @Override
-    public String toString(){
-        StringBuilder builder = new StringBuilder();
-        builder.append(System.getProperty("line.separator"));
-        builder.append(System.getProperty("line.separator"));
-        builder.append(this.getDescription());
-        builder.append(System.getProperty("line.separator"));
-        builder.append(System.getProperty("line.separator"));
-        return builder.toString();
     }
 }

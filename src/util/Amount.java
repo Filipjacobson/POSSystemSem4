@@ -16,15 +16,6 @@ public class Amount {
     }
 
     /**
-     * Creates a new instance.
-     *
-     * @param amount Takes Amount and stores it in the object.
-     */
-    public Amount(Amount amount){
-        this.amount = amount.getAmount();
-    }
-
-    /**
      * Get method for Amount.
      * @return Returns the amount of the instance.
      */
@@ -52,12 +43,19 @@ public class Amount {
         return new Amount(this.amount - amount.getAmount());
     }
 
+    /**
+     *
+     * @param amount
+     * @return
+     */
     public Amount multiply(Amount amount){
         return new Amount(this.amount * amount.getAmount());
     }
 
-
-
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();

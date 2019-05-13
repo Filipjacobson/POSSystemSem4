@@ -3,7 +3,6 @@ package view;
 import controller.Controller;
 import integration.SaleDTO;
 import util.Amount;
-import util.ItemIdentifier;
 
 /**
  *

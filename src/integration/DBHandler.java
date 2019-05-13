@@ -18,7 +18,6 @@ public class DBHandler {
     public DBHandler(){
         data = new Data();
         accountingSystem = new AccountingSystem();
-        System.out.println("Creating InventorySystem in DBhandler constructor");
         inventorySystem = new InventorySystem();
     }
 

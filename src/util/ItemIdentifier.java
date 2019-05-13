@@ -1,6 +1,5 @@
 package util;
 
-
 /**
  *
  */
@@ -24,7 +23,10 @@ public class ItemIdentifier {
         return this.itemIdentifier;
     }
 
-
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
@@ -32,6 +34,11 @@ public class ItemIdentifier {
         return builder.toString();
     }
 
+    /**
+     *
+     * @param otherObj
+     * @return
+     */
     public boolean equals(Object otherObj){
         if(otherObj == null) return false;
         if (getClass() != otherObj.getClass()) return false;

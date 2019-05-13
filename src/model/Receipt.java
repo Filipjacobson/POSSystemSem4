@@ -2,14 +2,11 @@ package model;
 
 import integration.SaleDTO;
 
-import java.util.Date;
-import java.util.List;
 import java.time.LocalDateTime;
 
 /**
  *
  */
-
 public class Receipt {
     private SaleDTO saleDTO;
 
@@ -71,7 +68,7 @@ public class Receipt {
         builder.append(System.getProperty("line.separator"));
         builder.append("------");
         builder.append(System.getProperty("line.separator"));
-        builder.append("Total number of items: " + saleDTO.getTotalNumberOfItems());
+        builder.append("Total number of articles: " + saleDTO.getTotalNumberOfItems());
         builder.append(System.getProperty("line.separator"));
         builder.append(System.getProperty("line.separator"));
         builder.append(System.getProperty("line.separator"));
@@ -83,9 +80,9 @@ public class Receipt {
         builder.append(System.getProperty("line.separator"));
         builder.append("-------------------------");
         builder.append(System.getProperty("line.separator"));
-        builder.append("Subtotal: ");
+        builder.append("Subtotal: \t\t" + saleDTO.getTotal() + " kr");
         builder.append(System.getProperty("line.separator"));
-        builder.append("VAT 12%: ");
+        builder.append("VAT: 12%\t\t" + (saleDTO.getTotal().getAmount()*0.12) + " kr");
         builder.append(System.getProperty("line.separator"));
         builder.append("------");
         builder.append(System.getProperty("line.separator"));
@@ -95,14 +92,17 @@ public class Receipt {
         builder.append(System.getProperty("line.separator"));
         builder.append("Payment method: Cash ");
         builder.append(System.getProperty("line.separator"));
-        builder.append("Change: \t\t" + saleDTO.getPayment().getChange() + " kr");
-        builder.append(System.getProperty("line.separator"));
+        builder.append("------");
         builder.append(System.getProperty("line.separator"));
         builder.append("Payment approved");
         builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Change: \t\t" + saleDTO.getPayment().getChange() + " kr");
+        builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
+        builder.append(System.getProperty("line.separator"));
 
-        builder.append(System.getProperty("line.separator"));
-        builder.append(System.getProperty("line.separator"));
         builder.append("\n------      THANK  YOU      ------");
         builder.append(System.getProperty("line.separator"));
 
@@ -113,6 +113,4 @@ public class Receipt {
         builder.append(System.getProperty("line.separator"));
         return builder.toString();
     }
-
-
 }

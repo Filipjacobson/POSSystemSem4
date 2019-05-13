@@ -11,7 +11,6 @@ import java.util.List;
  */
 public class InventorySystem {
     private List<ItemDTO> inventoryList = new ArrayList<>();
-
     private final int GROCERY_VAT_RATE = 12;
     private final int TOBACCO_VAT_RATE = 50;
 
@@ -19,7 +18,6 @@ public class InventorySystem {
      * Creates a new instance.
      */
     public InventorySystem (){
-        System.out.println("Adding fake items");
         addFakeItems();
     }
 
@@ -39,11 +37,13 @@ public class InventorySystem {
         return null;
     }
 
+    /**
+     * Adds fake items to the Inventory System.
+     */
     private void addFakeItems(){
         inventoryList.add(new ItemDTO("Milk 1l                  ", new Amount(10), new ItemIdentifier(3456), GROCERY_VAT_RATE));
         inventoryList.add(new ItemDTO("Lemonade 33cl            ", new Amount(12), new ItemIdentifier(2345), GROCERY_VAT_RATE));
         inventoryList.add(new ItemDTO("John Silver w/o filter 3p", new Amount(39), new ItemIdentifier(1234), TOBACCO_VAT_RATE));
-        System.out.println("Fake items loaded successfully");
     }
 
 

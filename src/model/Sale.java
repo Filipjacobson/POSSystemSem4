@@ -44,37 +44,52 @@ public class Sale {
         return new SaleDTO(this);
     }
 
+    /**
+     *
+     * @param payment
+     */
     public void addPayment(Payment payment){
         payment.calculateTotal(total);
         this.payment = payment;
     }
 
+    /**
+     *
+     * @param printer
+     */
     public void printReceipt(Printer printer){
         Receipt receipt = new Receipt(new SaleDTO(this));
         printer.print(receipt);
     }
 
+    /**
+     *
+     * @return
+     */
+    public List<ItemOnSale> getList() {
+        return list;
+    }
 
     /**
      *
      * @return
      */
-    public Sale getSale(){
-        return this;
-    }
-
-    public List<ItemOnSale> getList() {
-        return list;
-    }
-
     public Payment getPayment(){
         return payment;
     }
 
+    /**
+     *
+     * @return
+     */
     public ItemDTO getLastAddedItem(){
         return lastAddedItem;
     }
 
+    /**
+     *
+     * @return
+     */
     public Amount getTotal(){
         return total;
     }

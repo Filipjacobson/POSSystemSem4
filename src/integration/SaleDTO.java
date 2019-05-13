@@ -40,26 +40,42 @@ public final class SaleDTO {
         return i;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<ItemOnSale> getItems() {
         return list;
     }
 
+    /**
+     *
+     * @return
+     */
     public Payment getPayment(){
         return payment;
     }
 
-    public ItemDTO getLastAddedItem(){
-        return lastAddedItem;
-    }
-
+    /**
+     *
+     * @return
+     */
     public Amount getTotal(){
         return total;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCashier(){
         return cashier;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();

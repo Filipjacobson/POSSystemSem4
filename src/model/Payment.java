@@ -1,8 +1,6 @@
 package model;
 
 import util.Amount;
-import integration.SaleDTO;
-import integration.Printer;
 
 /**
  *
@@ -20,14 +18,26 @@ public class Payment {
         this.paidAmount = paidAmount;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getPaidAmount(){
         return this.paidAmount.getAmount();
     }
 
+    /**
+     *
+     * @return
+     */
     public double getChange(){
         return this.paidAmount.subtract(this.total).getAmount();
     }
 
+    /**
+     *
+     * @param total
+     */
     public void calculateTotal(Amount total){
         this.total = total;
     }

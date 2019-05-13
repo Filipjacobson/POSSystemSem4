@@ -2,7 +2,6 @@ package model;
 
 import integration.ItemDTO;
 import util.Amount;
-import util.ItemIdentifier;
 
 /**
  *
@@ -10,7 +9,6 @@ import util.ItemIdentifier;
 public class ItemOnSale {
     private ItemDTO itemDTO;
     private int quantity;
-    private Amount linePrice = new Amount(0);
 
     /**
      * Creates a new instance.
@@ -47,17 +45,12 @@ public class ItemOnSale {
         return this.itemDTO.getItemDTOPrice();
     }
 
-    public Amount getLinePrice(){
-        return linePrice;
-    }
-
     /**
      *
      */
     public void incrementQuantity(int number){
         this.quantity += number;
     }
-
 
     /**
      *

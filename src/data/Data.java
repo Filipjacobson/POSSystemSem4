@@ -21,9 +21,7 @@ public class Data {
      * @param itemIdentifier
      * @return
      */
-    //
     public ItemDTO getItemInformationData(ItemIdentifier itemIdentifier){
-
         return null;
     }
 }

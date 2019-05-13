@@ -32,7 +32,6 @@ public class Controller {
      * @return An object
      */
     public void startNewSale(){
-        System.out.println("Cashier starts new sale");
         sale = new Sale();
     }
 
@@ -50,7 +49,6 @@ public class Controller {
         } else {
             return null;
         }
-
     }
 
     /**
