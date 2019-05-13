@@ -16,6 +16,7 @@ public class ItemIdentifier {
     }
 
     /**
+     * Gets the itemIdentifier from the ItemIdentifier.
      *
      * @return
      */
@@ -24,21 +25,10 @@ public class ItemIdentifier {
     }
 
     /**
-     *
-     * @return
-     */
-    @Override
-    public String toString(){
-        StringBuilder builder = new StringBuilder();
-        builder.append(this.getItemIdentifier());
-        return builder.toString();
-    }
-
-    /**
      * SUT: Used to test if the ItemIdentifiers are equal.
      *
      * @param otherObj
-     * @return
+     * @return Returns <code>true</code> if equal. Returns <code>false</code> if not equal.
      */
     public boolean equals(Object otherObj){
         if(otherObj == null) return false;
@@ -46,5 +36,17 @@ public class ItemIdentifier {
         ItemIdentifier otherCasted = (ItemIdentifier) otherObj;
         if (!(this.itemIdentifier == otherCasted.itemIdentifier)) return false;
         return true;
+    }
+
+    /**
+     * Converts the instance of ItemIdentifier to String.
+     *
+     * @return Item identifier as String.
+     */
+    @Override
+    public String toString(){
+        StringBuilder builder = new StringBuilder();
+        builder.append(this.getItemIdentifier());
+        return builder.toString();
     }
 }

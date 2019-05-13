@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Holds information about the sale, as a DTO.
+ * Contains information about the item, as a DTO.
  */
 public final class SaleDTO {
     private List<ItemOnSale> list = new ArrayList<>();
@@ -20,6 +20,8 @@ public final class SaleDTO {
 
     /**
      * Creates a new instance.
+     *
+     * @param sale
      */
     public SaleDTO(Sale sale){
         this.list = sale.getList();
@@ -33,46 +35,71 @@ public final class SaleDTO {
      * @return
      */
     public int getTotalNumberOfItems(){
-        int i = 0;
+        int counter = 0;
         for (ItemOnSale item : list){
-            i++;
+            counter++;
         }
-        return i;
+        return counter;
     }
 
     /**
+     * Gets the list of ItemOnSale from the SaleDTO.
      *
-     * @return
+     * @return The SaleDTO's list of ItemOnSale.
      */
     public List<ItemOnSale> getItems() {
         return list;
     }
 
     /**
+     * Gets the payment from the SaleDTO.
      *
-     * @return
+     * @return The SaleDTO payment.
      */
     public Payment getPayment(){
         return payment;
     }
 
     /**
+     * Gets the total from the SaleDTO.
      *
-     * @return
+     * @return The SaleDTO total.
      */
     public Amount getTotal(){
         return total;
     }
 
     /**
+     * Gets the cashier from the SaleDTO.
      *
-     * @return
+     * @return The SaleDTO cashier.
      */
     public String getCashier(){
         return cashier;
     }
 
+
     /**
+     * SUT: Used to test if the SaleDTOs are equal.
+     *
+     * @param otherObj
+     * @return Returns <code>true</code> if equal. Returns <code>false</code> if not equal.
+     */
+    public boolean equals(Object otherObj){
+        if(otherObj == null) return false;
+        if (getClass() != otherObj.getClass()) return false;
+        SaleDTO otherCasted = (SaleDTO) otherObj;
+        if(list.size() < 1 && otherCasted.list.size() < 1) return true;
+        for(int i = 0; i < this.list.size(); i++){
+            if(!this.list.get(i).equals(otherCasted.list.get(i))){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Converts the instance of SaleDTO to String.
      *
      * @return
      */

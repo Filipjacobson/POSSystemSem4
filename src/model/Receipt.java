@@ -20,8 +20,9 @@ public class Receipt {
     }
 
     /**
+     * Converts the receipt to String.
      *
-     * @return
+     * @return Receipt as String.
      */
     @Override
     public String toString(){

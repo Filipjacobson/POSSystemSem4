@@ -63,32 +63,36 @@ public class Sale {
     }
 
     /**
+     * Gets the list of ItemOnSale from the Sale.
      *
-     * @return
+     * @return The Sale's list of ItemOnSales.
      */
     public List<ItemOnSale> getList() {
         return list;
     }
 
     /**
+     * Gets the payment from the Sale.
      *
-     * @return
+     * @return The Sale's payment.
      */
     public Payment getPayment(){
         return payment;
     }
 
     /**
+     * Gets the last added item from the Sale.
      *
-     * @return
+     * @return The Sale's last added item.
      */
     public ItemDTO getLastAddedItem(){
         return lastAddedItem;
     }
 
     /**
+     * Gets the total from the Sale.
      *
-     * @return
+     * @return The Sale's total.
      */
     public Amount getTotal(){
         return total;

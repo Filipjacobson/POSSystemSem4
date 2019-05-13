@@ -16,7 +16,8 @@ public class Amount {
     }
 
     /**
-     * Get method for Amount.
+     * Gets the amount from the Amount.
+     *
      * @return Returns the amount of the instance.
      */
     public double getAmount(){
@@ -53,21 +54,10 @@ public class Amount {
     }
 
     /**
-     *
-     * @return
-     */
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(this.getAmount());
-        return builder.toString();
-    }
-
-    /**
      * SUT: Used to test if the Amounts are equal.
      *
      * @param otherObj
-     * @return
+     * @return Returns <code>true</code> if equal. Returns <code>false</code> if not equal.
      */
     public boolean equals(Object otherObj){
         if(otherObj == null) return false;
@@ -75,5 +65,17 @@ public class Amount {
         Amount otherCasted = (Amount) otherObj;
         if (!(this.amount == otherCasted.amount)) return false;
         return true;
+    }
+
+    /**
+     * Converts the instance of Amount to String.
+     *
+     * @return Amount as String.
+     */
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(this.getAmount());
+        return builder.toString();
     }
 }

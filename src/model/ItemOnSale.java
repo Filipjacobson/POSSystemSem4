@@ -53,13 +53,14 @@ public class ItemOnSale {
     }
 
     /**
+     * Converts the instance of ItemOnSale to String.
      *
-     * @return
+     * @return Instance of ItemOnSale as String.
      */
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
-        builder.append(itemDTO.getDescription() + "\t\t");
+        builder.append(itemDTO.getItemDTODescription() + "\t\t");
         builder.append(quantity + " st * ");
         builder.append(itemDTO.getItemDTOPrice() + "kr ");
         builder.append("\t\t" + itemDTO.getItemDTOPrice().getAmount()*quantity + " kr ");

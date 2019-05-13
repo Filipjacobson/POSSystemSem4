@@ -24,6 +24,10 @@ public class AccountingSystem {
         accountingSystemLog.add(saleDTO);
     }
 
+    /**
+     *
+     * @return
+     */
     public List<SaleDTO> getAccountingSystemLog(){
         return this.accountingSystemLog;
     }
