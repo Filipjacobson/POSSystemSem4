@@ -37,7 +37,8 @@ public class Sale {
                 System.out.println("Item already on sale, adding its quantity");
                 lastAddedItem = itemBeingAddedToSale.getItemDTO();
                 itemInList.incrementQuantity();
-                this.total.add(itemBeingAddedToSale.getItemPriceAsAmount());
+                System.out.println(" this is the item beeing added price "+ itemBeingAddedToSale.getItemPriceAsAmount().getAmount());
+                this.total.add(itemBeingAddedToSale.getItemPriceAsAmount().multiply(new Amount(itemBeingAddedToSale.getQuantity())));
                 return new SaleDTO(this);
             }
         }
@@ -46,8 +47,8 @@ public class Sale {
         System.out.println("Item added to sales list");
         lastAddedItem = itemBeingAddedToSale.getItemDTO();
         System.out.println("Last added item was updated");
-        total.add(itemBeingAddedToSale.getItemPriceAsAmount());
-
+        System.out.println(" this is the item being added price "+ itemBeingAddedToSale.getItemPriceAsAmount().getAmount());
+        this.total.add(itemBeingAddedToSale.getItemPriceAsAmount().multiply(new Amount(itemBeingAddedToSale.getQuantity())));
         return new SaleDTO(this);
     }
 
@@ -83,6 +84,8 @@ public class Sale {
     }
 
     public Amount getTotal(){
+        System.out.println("GET TOTAL STARTS HERE >>>>>");
+        System.out.println(total.getAmount());
         return total;
     }
 }

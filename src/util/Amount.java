@@ -33,6 +33,16 @@ public class Amount {
     }
 
     /**
+     * Used to add one amount with another.
+     *
+     * @param amount Takes an amount to add with.
+     * @return Returns the sum of the added values.
+     */
+    public void add(Amount amount){
+        this.amount = this.amount + amount.getAmount();
+    }
+
+    /**
      * Used to subtract one amount with another.
      *
      * @param amount Takes an amount to subtract with.
@@ -42,15 +52,11 @@ public class Amount {
         return (new Amount(this.amount - amount.getAmount()));
     }
 
-    /**
-     * Used to add one amount with another.
-     *
-     * @param amount Takes an amount to add with.
-     * @return Returns the sum of the added values.
-     */
-    public void add(Amount amount){
-         this.amount = this.amount + amount.getAmount();
+    public Amount multiply(Amount amount){
+        return (new Amount(this.amount = this.amount * amount.getAmount()));
     }
+
+
 
     @Override
     public String toString() {

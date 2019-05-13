@@ -35,7 +35,7 @@ public class View {
         System.out.println(saleDTO);
         System.out.println(System.getProperty("line.separator"));
 
-        Amount paidAmount = new Amount(1000);
+        Amount paidAmount = new Amount(500);
         contr.pay(paidAmount);
    }
 }
