@@ -33,7 +33,6 @@ public class InventorySystem {
     public ItemDTO getItemFromInventory(ItemIdentifier itemIdentifier){
         for(ItemDTO itemDTO : inventoryList){
             if (itemIdentifier.equals(itemDTO.getItemIdentifier())) {
-                System.out.println("ItemIdentifier " + itemIdentifier + "found in inventory");
                 return itemDTO;
             }
         }

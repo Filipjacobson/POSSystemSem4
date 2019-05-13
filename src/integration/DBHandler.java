@@ -30,7 +30,6 @@ public class DBHandler {
      * @return An ItemDTO which matched the requested itemIdentifier.
      */
     public ItemDTO getItemInformation(ItemIdentifier itemIdentifier){
-        System.out.println("Getting item information (in DBHandler)");
         return inventorySystem.getItemFromInventory(itemIdentifier);
     }
 

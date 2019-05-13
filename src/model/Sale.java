@@ -31,24 +31,16 @@ public class Sale {
      * @return
      */
     public SaleDTO addItem(ItemOnSale itemBeingAddedToSale){
-        System.out.println("Trying to add the item found to the sale" + itemBeingAddedToSale.toString());
+        this.total.add(itemBeingAddedToSale.getItemPrice().multiply(new Amount(itemBeingAddedToSale.getQuantity())));
         for(ItemOnSale itemInList : list){
             if(itemInList.getItemDTO().equals(itemBeingAddedToSale.getItemDTO())){
-                System.out.println("Item already on sale, adding its quantity");
                 lastAddedItem = itemBeingAddedToSale.getItemDTO();
-                itemInList.incrementQuantity();
-                System.out.println(" this is the item beeing added price "+ itemBeingAddedToSale.getItemPriceAsAmount().getAmount());
-                this.total.add(itemBeingAddedToSale.getItemPriceAsAmount().multiply(new Amount(itemBeingAddedToSale.getQuantity())));
+                itemInList.incrementQuantity(itemBeingAddedToSale.getQuantity());
                 return new SaleDTO(this);
             }
         }
-        System.out.println("Item was not on sale, adding item");
         list.add(itemBeingAddedToSale);
-        System.out.println("Item added to sales list");
         lastAddedItem = itemBeingAddedToSale.getItemDTO();
-        System.out.println("Last added item was updated");
-        System.out.println(" this is the item being added price "+ itemBeingAddedToSale.getItemPriceAsAmount().getAmount());
-        this.total.add(itemBeingAddedToSale.getItemPriceAsAmount().multiply(new Amount(itemBeingAddedToSale.getQuantity())));
         return new SaleDTO(this);
     }
 
@@ -84,8 +76,6 @@ public class Sale {
     }
 
     public Amount getTotal(){
-        System.out.println("GET TOTAL STARTS HERE >>>>>");
-        System.out.println(total.getAmount());
         return total;
     }
 }

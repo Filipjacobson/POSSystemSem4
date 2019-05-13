@@ -43,14 +43,11 @@ public class Controller {
      * @return
      */
     public SaleDTO addItem(int itemIdentifier, int quantity){
-        System.out.println("addItem() started in Controller");
         ItemDTO foundItem = dbhandl.getItemInformation(new ItemIdentifier(itemIdentifier));
         if (foundItem != null){
-            System.out.println("Found item");
             sale.addItem(new ItemOnSale(foundItem, quantity));
             return new SaleDTO(sale);
         } else {
-            System.out.println("Item NOT found.");
             return null;
         }
 

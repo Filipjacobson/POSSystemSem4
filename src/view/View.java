@@ -29,7 +29,7 @@ public class View {
         contr.startNewSale();
 
         saleDTO = contr.addItem(1234, 3);
-        saleDTO = contr.addItem(1234, 1);
+        saleDTO = contr.addItem(1234, 2);
         saleDTO = contr.addItem(2345, 1);
         saleDTO = contr.addItem(3456, 1);
         System.out.println(saleDTO);

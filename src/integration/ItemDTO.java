@@ -51,10 +51,6 @@ public final class ItemDTO {
         return this.price;
     }
 
-    public Amount getItemPriceAsAmount(){
-        return this.price;
-    }
-
     public String getDescription(){
         return this.description;
     }

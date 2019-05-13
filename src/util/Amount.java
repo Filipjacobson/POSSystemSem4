@@ -49,11 +49,11 @@ public class Amount {
      * @return Returns the difference of the subtracted values.
      */
     public Amount subtract(Amount amount){
-        return (new Amount(this.amount - amount.getAmount()));
+        return new Amount(this.amount - amount.getAmount());
     }
 
     public Amount multiply(Amount amount){
-        return (new Amount(this.amount = this.amount * amount.getAmount()));
+        return new Amount(this.amount * amount.getAmount());
     }
 
 
