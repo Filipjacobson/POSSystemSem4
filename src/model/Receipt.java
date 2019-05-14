@@ -78,7 +78,7 @@ public class Receipt {
         builder.append(System.getProperty("line.separator"));
         builder.append("Subtotal: \t\t" + saleDTO.getTotal() + " kr");
         builder.append(System.getProperty("line.separator"));
-        builder.append("VAT: 12%\t\t" + (saleDTO.getTotal().getAmount()*0.12) + " kr");
+        builder.append("VAT 12%: \t\t" + (saleDTO.getTotal().getAmount()*0.12) + " kr");
         builder.append(System.getProperty("line.separator"));
         builder.append("------");
         builder.append(System.getProperty("line.separator"));
