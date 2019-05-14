@@ -3,6 +3,7 @@ package integration;
 import util.Amount;
 import util.ItemIdentifier;
 
+
 /**
  * Contains information about the item, as a DTO.
  */
@@ -11,6 +12,7 @@ public final class ItemDTO {
     private final Amount price;
     private final ItemIdentifier identifier;
     private final double VATrate;
+    private final String expiryDate = "Infinite";
 
     /**
      * Creates a new instance.
