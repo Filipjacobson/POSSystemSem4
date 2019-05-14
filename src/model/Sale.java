@@ -31,7 +31,7 @@ public class Sale {
      * @return A new SaleDTO of the current Sale.
      */
     public SaleDTO addItem(ItemOnSale itemBeingAddedToSale){
-        this.total.add(itemBeingAddedToSale.getItemPrice().multiply(new Amount(itemBeingAddedToSale.getQuantity())));
+        this.total.add(itemTimesQuantity(itemBeingAddedToSale));
         for(ItemOnSale itemInList : list){
             if(itemInList.getItemDTO().equals(itemBeingAddedToSale.getItemDTO())){
                 lastAddedItem = itemBeingAddedToSale.getItemDTO();
@@ -42,6 +42,10 @@ public class Sale {
         list.add(itemBeingAddedToSale);
         lastAddedItem = itemBeingAddedToSale.getItemDTO();
         return new SaleDTO(this);
+    }
+
+    private Amount itemTimesQuantity(ItemOnSale itemBeingAddedToSale){
+        return itemBeingAddedToSale.getItemPrice().multiply(new Amount(itemBeingAddedToSale.getQuantity()));
     }
 
     /**
