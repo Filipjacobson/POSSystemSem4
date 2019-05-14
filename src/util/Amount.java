@@ -8,6 +8,13 @@ public class Amount {
 
     /**
      * Creates a new instance.
+     */
+    public Amount(){
+
+    }
+
+    /**
+     * Creates a new instance.
      *
      * @param amount Takes double and stores it in the object.
      */
@@ -28,7 +35,6 @@ public class Amount {
      * Used to add one amount with another.
      *
      * @param amount Takes an amount to add with.
-     * @return The sum of the added values.
      */
     public void add(Amount amount){
         this.amount = this.amount + amount.getAmount();
@@ -52,6 +58,16 @@ public class Amount {
      */
     public Amount multiply(Amount amount){
         return new Amount(this.amount * amount.getAmount());
+    }
+
+    /**
+     * Used to divide one amount with another.
+     *
+     * @param amount The amount to divide with.
+     * @return The product of the divided values.
+     */
+    public Amount divide(Amount amount){
+        return new Amount((this.amount)/(amount.getAmount()));
     }
 
     /**
