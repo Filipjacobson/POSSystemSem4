@@ -28,7 +28,7 @@ public class Sale {
      * Adds an item to the sale.
      *
      * @param itemBeingAddedToSale The item to be added.
-     * @return
+     * @return A new SaleDTO of the current Sale.
      */
     public SaleDTO addItem(ItemOnSale itemBeingAddedToSale){
         this.total.add(itemBeingAddedToSale.getItemPrice().multiply(new Amount(itemBeingAddedToSale.getQuantity())));
@@ -45,17 +45,19 @@ public class Sale {
     }
 
     /**
+     * Add payment to this instance.
      *
-     * @param payment
+     * @param payment The payment.
      */
     public void addPayment(Payment payment){
-        payment.calculateTotal(total);
+        payment.addToTotal(total);
         this.payment = payment;
     }
 
     /**
+     * Used to print the receipt.
      *
-     * @param printer
+     * @param printer The printer that will print the receipt.
      */
     public void printReceipt(Printer printer){
         Receipt receipt = new Receipt(new SaleDTO(this));

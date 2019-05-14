@@ -31,8 +31,9 @@ public final class SaleDTO {
     }
 
     /**
+     * Counts the number of items that is currently stored in the list of items.
      *
-     * @return
+     * @return The number of items (unique) on sale.
      */
     public int getTotalNumberOfItems(){
         int counter = 0;
@@ -82,7 +83,7 @@ public final class SaleDTO {
     /**
      * SUT: Used to test if the SaleDTOs are equal.
      *
-     * @param otherObj
+     * @param otherObj The object of any object type.
      * @return Returns <code>true</code> if equal. Returns <code>false</code> if not equal.
      */
     public boolean equals(Object otherObj){
@@ -101,7 +102,7 @@ public final class SaleDTO {
     /**
      * Converts the instance of SaleDTO to String.
      *
-     * @return
+     * @return The instance of SaleDTO as String.
      */
     @Override
     public String toString(){

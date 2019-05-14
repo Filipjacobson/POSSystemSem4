@@ -5,7 +5,7 @@ import integration.SaleDTO;
 import java.time.LocalDateTime;
 
 /**
- *
+ * An object modelling the receipt.
  */
 public class Receipt {
     private SaleDTO saleDTO;

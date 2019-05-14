@@ -3,7 +3,7 @@ package model;
 import util.Amount;
 
 /**
- *
+ * An object modelling the payment.
  */
 public class Payment {
     private Amount total;
@@ -19,26 +19,29 @@ public class Payment {
     }
 
     /**
+     * Adds the total to the Payment.
      *
-     * @return
+     * @param total The total.
+     */
+    public void addToTotal(Amount total){
+        this.total = total;
+    }
+
+    /**
+     * Gets the paid amount from the Payment.
+     *
+     * @return The paid amount.
      */
     public double getPaidAmount(){
         return this.paidAmount.getAmount();
     }
 
     /**
+     * Calculates and gets the change from the Payment.
      *
-     * @return
+     * @return The change (paid amount - total).
      */
     public double getChange(){
         return this.paidAmount.subtract(this.total).getAmount();
-    }
-
-    /**
-     *
-     * @param total
-     */
-    public void calculateTotal(Amount total){
-        this.total = total;
     }
 }

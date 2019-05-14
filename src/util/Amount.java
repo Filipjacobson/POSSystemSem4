@@ -1,7 +1,7 @@
 package util;
 
 /**
- *
+ * An object modelling any amount.
  */
 public class Amount {
     private double amount;
@@ -18,7 +18,7 @@ public class Amount {
     /**
      * Gets the amount from the Amount.
      *
-     * @return Returns the amount of the instance.
+     * @return The amount of the instance.
      */
     public double getAmount(){
         return this.amount;
@@ -28,7 +28,7 @@ public class Amount {
      * Used to add one amount with another.
      *
      * @param amount Takes an amount to add with.
-     * @return Returns the sum of the added values.
+     * @return The sum of the added values.
      */
     public void add(Amount amount){
         this.amount = this.amount + amount.getAmount();
@@ -37,17 +37,18 @@ public class Amount {
     /**
      * Used to subtract one amount with another.
      *
-     * @param amount Takes an amount to subtract with.
-     * @return Returns the difference of the subtracted values.
+     * @param amount The amount to subtract with.
+     * @return The difference of the subtracted values.
      */
     public Amount subtract(Amount amount){
         return new Amount(this.amount - amount.getAmount());
     }
 
     /**
+     * Used to multiply one amount with another.
      *
-     * @param amount
-     * @return
+     * @param amount The amount to multiply with.
+     * @return The product of the multiplied values.
      */
     public Amount multiply(Amount amount){
         return new Amount(this.amount * amount.getAmount());
@@ -56,7 +57,7 @@ public class Amount {
     /**
      * SUT: Used to test if the Amounts are equal.
      *
-     * @param otherObj
+     * @param otherObj The object of any object type.
      * @return Returns <code>true</code> if equal. Returns <code>false</code> if not equal.
      */
     public boolean equals(Object otherObj){

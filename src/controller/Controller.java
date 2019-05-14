@@ -5,7 +5,7 @@ import model.*;
 import util.*;
 
 /**
- * Controls and delegades the important tasks.
+ * Controls and delegates the important tasks.
  */
 public class Controller {
     private AccountingSystem accountingSystem;
@@ -17,6 +17,7 @@ public class Controller {
     /**
      * Creates a new instance.
      *
+     * @param systemCreator Holds the created instances of the external systems.
      */
     public Controller(SystemCreator systemCreator){
         this.accountingSystem = systemCreator.getAccountingSystem();
@@ -26,9 +27,7 @@ public class Controller {
     }
 
     /**
-     * View initiates a new sale by calling this method.
-     *
-     * @return An object
+     * View initiates a new sale by calling this method. A new instance is created.
      */
     public void startNewSale(){
         sale = new Sale();
@@ -37,9 +36,9 @@ public class Controller {
     /**
      * Adds an item to the sale.
      *
-     * @param itemIdentifier
+     * @param itemIdentifier The item identifier of the item entered.
      * @param quantity Number of items entered.
-     * @return
+     * @return The SaleDTO containing the whole sale.
      */
     public SaleDTO addItem(int itemIdentifier, int quantity){
         ItemDTO foundItem = dbhandl.getItemInformation(new ItemIdentifier(itemIdentifier));
@@ -54,7 +53,7 @@ public class Controller {
     /**
      * Manages the payment process.
      *
-     * @param paidAmount
+     * @param paidAmount Takes the amount paid to apply to the sale.
      */
     public void pay(Amount paidAmount){
         Payment payment = new Payment(paidAmount);

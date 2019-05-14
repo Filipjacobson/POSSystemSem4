@@ -4,7 +4,7 @@ import integration.ItemDTO;
 import util.Amount;
 
 /**
- *
+ * Holds the pair of item and quantity, which can be viewed as the item line on receipt.
  */
 public class ItemOnSale {
     private ItemDTO itemDTO;
@@ -13,8 +13,8 @@ public class ItemOnSale {
     /**
      * Creates a new instance.
      *
-     * @param itemDTO
-     * @param quantity
+     * @param itemDTO The item to be stored.
+     * @param quantity The quantity of that item to be stored.
      */
     public ItemOnSale(ItemDTO itemDTO, int quantity){
         this.itemDTO = itemDTO;
@@ -24,7 +24,7 @@ public class ItemOnSale {
     /**
      * Gets the ItemDTO from the ItemOnSale.
      *
-     * @return
+     * @return The ItemOnSale ItemDTO.
      */
     public ItemDTO getItemDTO(){
         return this.itemDTO;
@@ -33,7 +33,7 @@ public class ItemOnSale {
     /**
      * Gets the quantity from the ItemOnSale.
      *
-     * @return
+     * @return The ItemOnSale quantity.
      */
     public int getQuantity(){
         return this.quantity;
@@ -42,17 +42,19 @@ public class ItemOnSale {
     /**
      * Gets the price from the ItemOnSale.
      *
-     * @return
+     * @return The ItemOnSale price.
      */
     public Amount getItemPrice(){
         return this.itemDTO.getItemDTOPrice();
     }
 
     /**
+     * Increments the quantity.
      *
+     * @param quantity The number to increment the quantity with.
      */
-    public void incrementQuantity(int number){
-        this.quantity += number;
+    public void incrementQuantity(int quantity){
+        this.quantity += quantity;
     }
 
     /**

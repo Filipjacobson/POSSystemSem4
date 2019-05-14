@@ -33,8 +33,9 @@ public class DBHandler {
     }
 
     /**
+     * Updating the external systems.
      *
-     * @param saleDTO
+     * @param saleDTO THe SaleDTO containing all the relevant information for the external systems.
      */
     public void updateSystems(SaleDTO saleDTO){
         accountingSystem.updateAccountingSystem(saleDTO);

@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * Manages the accounting system, thus here is no accounting system in this program.
+ * For the sake of testing the addItem()-method we will add fake items to the inventory.
  */
 public class InventorySystem {
     private List<ItemDTO> inventoryList = new ArrayList<>();
@@ -48,7 +49,7 @@ public class InventorySystem {
 
 
     /**
-     * Dummy class to update Inventory System. Doesn't do anything.
+     * Dummy class to update inventory system. Doesn't do anything.
      *
      * @param saleDTO
      */

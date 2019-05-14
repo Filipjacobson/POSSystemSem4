@@ -15,10 +15,10 @@ public final class ItemDTO {
     /**
      * Creates a new instance.
      *
-     * @param description
-     * @param price
-     * @param identifier
-     * @param VATrate
+     * @param description The description of the item.
+     * @param price The price of the item.
+     * @param identifier The item identifier of the item.
+     * @param VATrate The VAT-rate of the item.
      */
     public ItemDTO(String description, Amount price, ItemIdentifier identifier, double VATrate){
         this.description = description;
@@ -57,7 +57,7 @@ public final class ItemDTO {
     /**
      * SUT: Used to test if the ItemDTOs are equal.
      *
-     * @param otherObj
+     * @param otherObj The object of any object type.
      * @return Returns <code>true</code> if equal. Returns <code>false</code> if not equal.
      */
     public boolean equals(Object otherObj){
@@ -71,7 +71,7 @@ public final class ItemDTO {
     /**
      * Converts the instance of ItemDTO to String.
      *
-     * @return
+     * @return The instance of ItemDTO as String.
      */
     @Override
     public String toString(){

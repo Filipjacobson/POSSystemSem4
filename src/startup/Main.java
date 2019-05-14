@@ -5,7 +5,7 @@ import integration.*;
 import view.View;
 
 /**
- *
+ * Main class starting the program.
  */
 public class Main {
     /**

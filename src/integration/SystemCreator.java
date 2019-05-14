@@ -1,7 +1,7 @@
 package integration;
 
 /**
- *
+ * Holds the external systems.
  */
 public class SystemCreator {
     private AccountingSystem accountingSystem;
@@ -18,16 +18,18 @@ public class SystemCreator {
     }
 
     /**
+     * Get method to access the accounting system.
      *
-     * @return
+     * @return The accounting system.
      */
     public AccountingSystem getAccountingSystem() {
         return accountingSystem;
     }
 
     /**
+     * Get method to access the inventory system.
      *
-     * @return
+     * @return The inventory system.
      */
     public InventorySystem getInventorySystem() {
         return inventorySystem;

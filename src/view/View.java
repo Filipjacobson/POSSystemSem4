@@ -25,10 +25,11 @@ public class View {
      */
     public void runFakeSale(){
         contr.startNewSale();
+        saleDTO = contr.addItem(2345, 20);
         saleDTO = contr.addItem(1234, 3);
         saleDTO = contr.addItem(1234, 2);
         saleDTO = contr.addItem(2345, 1);
-        saleDTO = contr.addItem(3456, 1);
+        saleDTO = contr.addItem(3456, 5);
         System.out.println(saleDTO);
         System.out.println(System.getProperty("line.separator"));
         Amount paidAmount = new Amount(500);

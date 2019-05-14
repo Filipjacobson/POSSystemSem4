@@ -1,7 +1,7 @@
 package util;
 
 /**
- *
+ * An object modelling the item identifier.
  */
 public class ItemIdentifier {
     private int itemIdentifier;
@@ -9,7 +9,7 @@ public class ItemIdentifier {
     /**
      * Creates a new instance.
      *
-     * @param itemIdentifier
+     * @param itemIdentifier The item identifier
      */
     public ItemIdentifier(int itemIdentifier){
         this.itemIdentifier = itemIdentifier;
@@ -27,7 +27,7 @@ public class ItemIdentifier {
     /**
      * SUT: Used to test if the ItemIdentifiers are equal.
      *
-     * @param otherObj
+     * @param otherObj The object of any object type.
      * @return Returns <code>true</code> if equal. Returns <code>false</code> if not equal.
      */
     public boolean equals(Object otherObj){
