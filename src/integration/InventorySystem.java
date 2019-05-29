@@ -29,7 +29,11 @@ public class InventorySystem {
      * @param itemIdentifier Used to fetch the correct ItemDTO.
      * @return An ItemDTO which matched the requested itemIdentifier.
      */
-    public ItemDTO getItemFromInventory(ItemIdentifier itemIdentifier){
+    public ItemDTO getItemFromInventory(ItemIdentifier itemIdentifier) throws NoSuchItemIdentifierException{
+        if (itemIdentifier == null){
+            throw new NoSuchItemIdentifierException("There was no item with this ItemIdentifier");
+        }
+
         for(ItemDTO itemDTO : inventoryList){
             if (itemIdentifier.equals(itemDTO.getItemDTOIdentifier())) {
                 return itemDTO;

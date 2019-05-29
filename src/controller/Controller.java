@@ -40,13 +40,18 @@ public class Controller {
      * @param quantity Number of items entered.
      * @return The SaleDTO containing the whole sale.
      */
-    public SaleDTO addItem(int itemIdentifier, int quantity){
-        ItemDTO foundItem = dbhandl.getItemInformation(new ItemIdentifier(itemIdentifier));
-        if (foundItem != null){
-            sale.addItem(new ItemOnSale(foundItem, quantity));
-            return new SaleDTO(sale);
-        } else {
-            return null;
+    public SaleDTO addItem(int itemIdentifier, int quantity) throws OperationFailureException{
+        try{
+            ItemDTO foundItem = dbhandl.getItemInformation(new ItemIdentifier(itemIdentifier));
+            if (foundItem != null){
+                sale.addItem(new ItemOnSale(foundItem, quantity));
+                return new SaleDTO(sale);
+            } else {
+                return null;
+            }
+        }
+        catch (OperationFailureException ofe){
+            throw new OperationFailureException(ofe.getMessage());
         }
     }
 

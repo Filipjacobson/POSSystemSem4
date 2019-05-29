@@ -1,5 +1,6 @@
 package integration;
 
+import controller.OperationFailureException;
 import util.ItemIdentifier;
 import data.Data;
 
@@ -28,8 +29,14 @@ public class DBHandler {
      * @param itemIdentifier Used to fetch the correct ItemDTO.
      * @return An ItemDTO which matched the requested itemIdentifier.
      */
-    public ItemDTO getItemInformation(ItemIdentifier itemIdentifier){
-        return inventorySystem.getItemFromInventory(itemIdentifier);
+    public ItemDTO getItemInformation(ItemIdentifier itemIdentifier) throws OperationFailureException{
+        try{
+            return inventorySystem.getItemFromInventory(itemIdentifier);
+        }
+        catch(NoSuchItemIdentifierException nsiie) {
+            throw new OperationFailureException(nsiie.getMessage());
+        }
+
     }
 
     /**
