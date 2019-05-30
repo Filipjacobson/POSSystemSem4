@@ -11,14 +11,16 @@ import util.Amount;
 public class View {
     private Controller contr;
     private SaleDTO saleDTO;
+    private ErrorMessageHandler errorMessageHandler;
 
     /**
      * Creates a new instance.
      *
      * @param contr The controller that is used for managing the overall work, delegating the important tasks.
      */
-    public View (Controller contr){
+    public View (Controller contr, ErrorMessageHandler errorMessageHandler){
         this.contr = contr;
+        this.errorMessageHandler = errorMessageHandler;
     }
 
     /**

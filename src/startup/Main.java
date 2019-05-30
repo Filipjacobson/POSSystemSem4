@@ -2,6 +2,7 @@ package startup;
 
 import controller.Controller;
 import integration.*;
+import view.ErrorMessageHandler;
 import view.View;
 
 /**
@@ -16,7 +17,8 @@ public class Main {
     public static void main (String[]args){
         SystemCreator systemCreator = new SystemCreator();
         Controller contr = new Controller(systemCreator);
-        View view = new View(contr);
+        ErrorMessageHandler errorMessageHandler = new ErrorMessageHandler();
+        View view = new View(contr, errorMessageHandler);
         view.runFakeSale();
     }
 }
