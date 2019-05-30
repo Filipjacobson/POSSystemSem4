@@ -33,10 +33,9 @@ public class DBHandler {
         try{
             return inventorySystem.getItemFromInventory(itemIdentifier);
         }
-        catch(NoSuchItemIdentifierException nsiie) {
-            throw new OperationFailureException(nsiie.getMessage());
+        catch(NoSuchItemIdentifierException | DatabaseConnectionFailureException e) {
+            throw new OperationFailureException(e.getMessage());
         }
-
     }
 
     /**

@@ -29,9 +29,9 @@ public class InventorySystem {
      * @param itemIdentifier Used to fetch the correct ItemDTO.
      * @return An ItemDTO which matched the requested itemIdentifier.
      */
-    public ItemDTO getItemFromInventory(ItemIdentifier itemIdentifier) throws NoSuchItemIdentifierException{
-        if (itemIdentifier == null){
-            throw new NoSuchItemIdentifierException("There was no item with this ItemIdentifier");
+    public ItemDTO getItemFromInventory(ItemIdentifier itemIdentifier) throws NoSuchItemIdentifierException, DatabaseConnectionFailureException{
+        if (inventoryList == null){
+            throw new DatabaseConnectionFailureException("Could not connect to the inventory system.");
         }
 
         for(ItemDTO itemDTO : inventoryList){
@@ -39,7 +39,7 @@ public class InventorySystem {
                 return itemDTO;
             }
         }
-        return null;
+        throw new NoSuchItemIdentifierException("There was no item with this item identifier.");
     }
 
     private void addFakeItems(){
