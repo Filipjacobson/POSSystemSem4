@@ -1,12 +1,13 @@
 package view;
 
+import integration.NoSuchItemIdentifierException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ErrorMessageHandlerTest {
+public class NoSuchItemIdentifierExceptionTest {
     /**
      *
      */
@@ -28,7 +29,7 @@ public class ErrorMessageHandlerTest {
      * @throws Exception
      */
     @Test
-    public void testOperationFailureException() throws Exception {
+    public void testNoSuchItemIdentifierException() throws NoSuchItemIdentifierException {
 
     }
 }
