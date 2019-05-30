@@ -6,20 +6,32 @@ import org.junit.Before;
 import org.junit.Test;
 import util.Amount;
 import util.ItemIdentifier;
-
 import static org.junit.Assert.*;
 
+/**
+ * Test for class ItemOnSale.
+ */
 public class ItemOnSaleTest {
+    /**
+     *
+     */
     @Before
     public void setUp(){
 
     }
 
+    /**
+     *
+     */
     @After
     public void tearDown(){
 
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     public void testIncrementQuantity() throws Exception {
         int quantityToBeIncremented = 1;
@@ -31,6 +43,10 @@ public class ItemOnSaleTest {
         assertEquals("Same quantity, not equal", expectedResult, result);
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     public void testToString() throws Exception {
         ItemDTO itemDTOTest = new ItemDTO("Milk 1l", new Amount(10), new ItemIdentifier(3456), 12);

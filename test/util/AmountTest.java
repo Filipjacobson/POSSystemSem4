@@ -3,25 +3,36 @@ package util;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
+/**
+ * Test for class Amount.
+ */
 public class AmountTest {
     private Amount emptyAmount;
     private Amount amountOne;
 
+    /**
+     *
+     */
     @Before
     public void setUp(){
         emptyAmount = new Amount();
         amountOne = new Amount(1);
     }
 
+    /**
+     *
+     */
     @After
     public void tearDown(){
         emptyAmount = null;
         amountOne = null;
     }
 
+    /**
+     *
+     */
     @Test
     public void testNotEqualsNull(){
         Amount amountNull = null;
@@ -30,6 +41,9 @@ public class AmountTest {
         assertEquals("The instance of Amount is null.", expectedResult, result);
     }
 
+    /**
+     *
+     */
     @Test
     public void testNotEqual(){
         Amount amountFour = new Amount(4);
@@ -38,6 +52,9 @@ public class AmountTest {
         assertEquals("The instance of Amount is null.", expectedResult, result);
     }
 
+    /**
+     *
+     */
     @Test
     public void testEqual(){
         Amount amountOtherOne = new Amount(1);
@@ -46,6 +63,9 @@ public class AmountTest {
         assertEquals("The instance of Amount is null.", expectedResult, result);
     }
 
+    /**
+     *
+     */
     @Test
     public void testEqualsNoArgument(){
         Amount emptyAmountOther = new Amount(0);
@@ -54,7 +74,10 @@ public class AmountTest {
         assertEquals("The instance of Amount is null.", expectedResult, result);
     }
 
-
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     public void testAdd() throws Exception {
         double amountAsDoubleOfOperand1 = 3;
@@ -66,6 +89,10 @@ public class AmountTest {
         //assertEquals("Addition not functioning properly. ", expectedResult, result);
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     public void testSubtract() throws Exception {
         double amountAsDoubleOfOperand1 = 3;
@@ -77,6 +104,10 @@ public class AmountTest {
         assertEquals("Subtraction not functioning properly. ", expectedResult, result);
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     public void testSubtractZeroResultNegative() throws Exception {
         double amountAsDoubleOfOperand1 = -2;
@@ -88,6 +119,10 @@ public class AmountTest {
         assertEquals("Subtraction not functioning properly. ", expectedResult, result);
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     public void testSubtractZeroResultPositive() throws Exception {
         double amountAsDoubleOfOperand1 = 2;
@@ -99,6 +134,10 @@ public class AmountTest {
         assertEquals("Subtraction not functioning properly. ", expectedResult, result);
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     public void testSubtractNegative() throws Exception {
         double amountAsDoubleOfOperand1 = 1;
@@ -110,6 +149,10 @@ public class AmountTest {
         assertEquals("Subtraction not functioning properly. ", expectedResult, result);
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     public void testMultiply() throws Exception {
         double amountAsDoubleOfOperand1 = 3;
@@ -121,6 +164,10 @@ public class AmountTest {
         assertEquals("Multiplication not functioning properly. ", expectedResult, result);
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     public void testMultiplyNegative() throws Exception {
         double amountAsDoubleOfOperand1 = -3;
@@ -132,6 +179,10 @@ public class AmountTest {
         assertEquals("Multiplication not functioning properly. ", expectedResult, result);
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     public void testDivide() throws Exception {
         double amountAsDoubleOfOperand1 = 3;
@@ -143,6 +194,10 @@ public class AmountTest {
         assertEquals("Division not functioning properly. ", expectedResult, result);
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     public void testDivideWithZero() throws Exception {
         double amountAsDoubleOfOperand1 = 3;

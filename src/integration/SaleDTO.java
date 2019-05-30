@@ -4,7 +4,6 @@ import model.ItemOnSale;
 import model.Payment;
 import model.Sale;
 import util.Amount;
-
 import java.util.ArrayList;
 import java.util.List;
 

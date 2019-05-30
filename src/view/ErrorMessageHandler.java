@@ -1,7 +1,6 @@
 package view;
 
 import controller.OperationFailureException;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
@@ -13,8 +12,9 @@ import java.time.format.FormatStyle;
 public class ErrorMessageHandler {
 
     /**
+     * Shows an error message to the user.
      *
-     * @param msg
+     * @param msg The message to print.
      */
     void showUsrErrorMsg(String msg){
         StringBuilder errorMsgBuild = new StringBuilder();
@@ -25,8 +25,9 @@ public class ErrorMessageHandler {
     }
 
     /**
+     * Logs an error message to the developer.
      *
-     * @param e
+     * @param e The exception to log.
      */
     public void logDevErrorMsg(OperationFailureException e){
         StringBuilder errorMsgBuild = new StringBuilder();
@@ -38,8 +39,9 @@ public class ErrorMessageHandler {
     }
 
     /**
+     * Creating the current time.
      *
-     * @return
+     * @return The current time.
      */
     private String createTime(){
         LocalDateTime time = LocalDateTime.now();
