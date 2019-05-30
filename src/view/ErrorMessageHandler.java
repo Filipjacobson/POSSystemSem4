@@ -8,7 +8,7 @@ import java.time.format.FormatStyle;
 
 
 /**
- * Responsible for showing the user the error messages.
+ * Responsible for showing the error message to the user and log the error message to the developer.
  */
 public class ErrorMessageHandler {
 
@@ -16,7 +16,7 @@ public class ErrorMessageHandler {
      *
      * @param msg
      */
-    void showErrorMsg(String msg){
+    void showUsrErrorMsg(String msg){
         StringBuilder errorMsgBuild = new StringBuilder();
         errorMsgBuild.append(createTime());
         errorMsgBuild.append(", USR ERROR MSG:");
@@ -28,7 +28,7 @@ public class ErrorMessageHandler {
      *
      * @param ofe
      */
-    public void logErrorMsg(OperationFailureException ofe){
+    public void logDevErrorMsg(OperationFailureException ofe){
         StringBuilder errorMsgBuild = new StringBuilder();
         errorMsgBuild.append(createTime());
         errorMsgBuild.append(", DEV ERROR MSG:");
