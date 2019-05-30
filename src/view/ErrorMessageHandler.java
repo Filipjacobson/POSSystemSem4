@@ -26,15 +26,15 @@ public class ErrorMessageHandler {
 
     /**
      *
-     * @param ofe
+     * @param e
      */
-    public void logDevErrorMsg(OperationFailureException ofe){
+    public void logDevErrorMsg(OperationFailureException e){
         StringBuilder errorMsgBuild = new StringBuilder();
         errorMsgBuild.append(createTime());
         errorMsgBuild.append(", DEV ERROR MSG:");
-        errorMsgBuild.append(ofe.getMessage());
+        errorMsgBuild.append(e.getMessage());
         errorMsgBuild.append(errorMsgBuild);
-        ofe.printStackTrace();
+        e.printStackTrace();
     }
 
     /**

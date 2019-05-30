@@ -39,9 +39,9 @@ public class View {
             Amount paidAmount = new Amount(500);
             contr.pay(paidAmount);
         }
-        catch(OperationFailureException ofe){
-            // Must handle and print with ErrorMessageHandler
-            // errorMessageHandler.showErrorMsg(ofe.getMessage());
+        catch(OperationFailureException e){
+            errorMessageHandler.showUsrErrorMsg(e.getMessage());
+            errorMessageHandler.logDevErrorMsg(e);
         }
    }
 }
