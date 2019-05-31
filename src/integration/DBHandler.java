@@ -16,10 +16,10 @@ public class DBHandler {
     /**
      * Creates a new instance.
      */
-    public DBHandler(){
-        data = new Data();
-        accountingSystem = new AccountingSystem();
-        inventorySystem = new InventorySystem();
+    public DBHandler(AccountingSystem accountingSystem, InventorySystem inventorySystem){
+        this.data = new Data();
+        this.accountingSystem = accountingSystem;
+        this.inventorySystem = inventorySystem;
     }
 
     /**
