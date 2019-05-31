@@ -22,8 +22,8 @@ public class Controller {
     public Controller(SystemCreator systemCreator){
         this.accountingSystem = systemCreator.getAccountingSystem();
         this.inventorySystem = systemCreator.getInventorySystem();
+        this.printer = systemCreator.getPrinter();
         this.dbhandl = new DBHandler(accountingSystem, inventorySystem);
-        this.printer = new Printer();
     }
 
     /**

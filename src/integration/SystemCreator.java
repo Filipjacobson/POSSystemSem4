@@ -34,4 +34,13 @@ public class SystemCreator {
     public InventorySystem getInventorySystem() {
         return inventorySystem;
     }
+
+    /**
+     * Get method to access the printer .
+     *
+     * @return The printer.
+     */
+    public Printer getPrinter() {
+        return printer;
+    }
 }
