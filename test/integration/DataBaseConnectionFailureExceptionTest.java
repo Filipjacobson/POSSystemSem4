@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class DataBaseConnectionFailureTest {
+public class DataBaseConnectionFailureExceptionTest {
     /**
      *
      */
@@ -26,7 +26,7 @@ public class DataBaseConnectionFailureTest {
      * @throws Exception
      */
     @Test
-    public void test() throws NoSuchItemIdentifierException {
+    public void testDataBaseConnectionFailureException() throws NoSuchItemIdentifierException {
 
     }
 }
