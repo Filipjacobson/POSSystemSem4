@@ -50,8 +50,8 @@ public class Controller {
                 return null;
             }
         }
-        catch (OperationFailureException ofe){
-            throw new OperationFailureException(ofe.getMessage());
+        catch (OperationFailureException e){
+            throw new OperationFailureException(e.getMessage());
         }
     }
 

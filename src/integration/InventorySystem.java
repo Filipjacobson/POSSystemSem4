@@ -55,4 +55,11 @@ public class InventorySystem {
      * @param saleDTO
      */
     public void updateInventorySystem(SaleDTO saleDTO){ }
+
+    /**
+     *
+     */
+    public void setInventoryListNull(){
+        this.inventoryList = null;
+    }
 }
