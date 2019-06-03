@@ -3,6 +3,7 @@ package view;
 import controller.Controller;
 import controller.OperationFailureException;
 import integration.SaleDTO;
+import model.TotalRevenueObserver;
 import util.Amount;
 
 /**
@@ -21,6 +22,7 @@ public class View {
     public View (Controller contr, ErrorMessageHandler errorMessageHandler){
         this.contr = contr;
         this.errorMessageHandler = errorMessageHandler;
+        contr.addTotalRevenueObserver(new TotalRevenueView());
     }
 
     /**

@@ -37,6 +37,15 @@ public class Payment {
     }
 
     /**
+     * Gets the paid amount from the Payment.
+     *
+     * @return The paid amount.
+     */
+    public Amount getTotal(){
+        return this.total;
+    }
+
+    /**
      * Calculates and gets the change from the Payment.
      *
      * @return The change (paid amount - total).

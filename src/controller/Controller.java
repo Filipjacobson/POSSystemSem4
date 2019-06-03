@@ -4,6 +4,9 @@ import integration.*;
 import model.*;
 import util.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Controls and delegates the important tasks.
  */
@@ -13,6 +16,7 @@ public class Controller {
     private InventorySystem inventorySystem;
     private Printer printer;
     private Sale sale;
+    private List<TotalRevenueObserver> trolist;
 
     /**
      * Creates a new instance.
@@ -24,6 +28,7 @@ public class Controller {
         this.inventorySystem = systemCreator.getInventorySystem();
         this.printer = systemCreator.getPrinter();
         this.dbhandl = new DBHandler(accountingSystem, inventorySystem);
+        this.trolist = new ArrayList<>();
     }
 
     /**
@@ -65,6 +70,7 @@ public class Controller {
         sale.addPayment(payment);
         SaleDTO saleDTO = new SaleDTO(sale);
         updateSystems(saleDTO);
+        notifyObservers(payment);
         sale.printReceipt(printer);
     }
 
@@ -75,5 +81,19 @@ public class Controller {
      */
     private void updateSystems(SaleDTO saleDTO){
         dbhandl.updateSystems(saleDTO);
+    }
+
+    /**
+     *
+     * @param payment
+     */
+    private void notifyObservers(Payment payment){
+        for(TotalRevenueObserver observer : trolist){
+            observer.newTotal(payment.getTotal());
+        }
+    }
+
+    public void addTotalRevenueObserver(TotalRevenueObserver totalRevenueObserver){
+        trolist.add(totalRevenueObserver);
     }
 }
