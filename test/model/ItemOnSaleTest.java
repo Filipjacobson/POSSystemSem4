@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  */
 public class ItemOnSaleTest {
     /**
-     *
+     * Things to set up before test.
      */
     @Before
     public void setUp(){
@@ -21,7 +21,7 @@ public class ItemOnSaleTest {
     }
 
     /**
-     *
+     * Things to clean up after test.
      */
     @After
     public void tearDown(){
@@ -29,6 +29,7 @@ public class ItemOnSaleTest {
     }
 
     /**
+     * One of the tests. Tests if expectedResult is equal to result.
      *
      * @throws Exception
      */
@@ -44,6 +45,7 @@ public class ItemOnSaleTest {
     }
 
     /**
+     * One of the tests. Tests if expectedResult is equal to result.
      *
      * @throws Exception
      */

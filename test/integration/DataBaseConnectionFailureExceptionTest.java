@@ -6,11 +6,14 @@ import org.junit.Before;
 import org.junit.Test;
 import util.ItemIdentifier;
 
-
+/**
+ * Test for class DataBaseConnectionFailureException
+ */
 public class DataBaseConnectionFailureExceptionTest {
     private InventorySystem inventorySystem;
+
     /**
-     *
+     * Things to set up before test.
      */
     @Before
     public void setUp(){
@@ -18,7 +21,7 @@ public class DataBaseConnectionFailureExceptionTest {
     }
 
     /**
-     *
+     * Things to clean up after test.
      */
 
     @After
@@ -27,6 +30,7 @@ public class DataBaseConnectionFailureExceptionTest {
     }
 
     /**
+     * Testing that the correct exception is thrown. Tests if expectedResult is equal to result.
      *
      * @throws DatabaseConnectionFailureException
      */

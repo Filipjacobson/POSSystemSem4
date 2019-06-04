@@ -13,7 +13,7 @@ public class AmountTest {
     private Amount amountOne;
 
     /**
-     *
+     * Things to set up before test.
      */
     @Before
     public void setUp(){
@@ -22,7 +22,7 @@ public class AmountTest {
     }
 
     /**
-     *
+     * Things to clean up after test.
      */
     @After
     public void tearDown(){
@@ -31,7 +31,7 @@ public class AmountTest {
     }
 
     /**
-     *
+     * One of the tests. Tests if expectedResult is equal to result.
      */
     @Test
     public void testNotEqualsNull(){
@@ -42,7 +42,7 @@ public class AmountTest {
     }
 
     /**
-     *
+     * One of the tests. Tests if expectedResult is equal to result.
      */
     @Test
     public void testNotEqual(){
@@ -53,7 +53,7 @@ public class AmountTest {
     }
 
     /**
-     *
+     * One of the tests. Tests if expectedResult is equal to result.
      */
     @Test
     public void testEqual(){
@@ -64,7 +64,7 @@ public class AmountTest {
     }
 
     /**
-     *
+     * One of the tests. Tests if expectedResult is equal to result.
      */
     @Test
     public void testEqualsNoArgument(){
@@ -75,6 +75,7 @@ public class AmountTest {
     }
 
     /**
+     * One of the tests. Tests if expectedResult is equal to result.
      *
      * @throws Exception
      */
@@ -90,6 +91,7 @@ public class AmountTest {
     }
 
     /**
+     * One of the tests. Tests if expectedResult is equal to result.
      *
      * @throws Exception
      */
@@ -105,6 +107,7 @@ public class AmountTest {
     }
 
     /**
+     * One of the tests. Tests if expectedResult is equal to result.
      *
      * @throws Exception
      */
@@ -120,6 +123,7 @@ public class AmountTest {
     }
 
     /**
+     * One of the tests. Tests if expectedResult is equal to result.
      *
      * @throws Exception
      */
@@ -135,6 +139,7 @@ public class AmountTest {
     }
 
     /**
+     * One of the tests. Tests if expectedResult is equal to result.
      *
      * @throws Exception
      */
@@ -150,6 +155,7 @@ public class AmountTest {
     }
 
     /**
+     * One of the tests. Tests if expectedResult is equal to result.
      *
      * @throws Exception
      */
@@ -165,6 +171,7 @@ public class AmountTest {
     }
 
     /**
+     * One of the tests. Tests if expectedResult is equal to result.
      *
      * @throws Exception
      */
@@ -180,6 +187,7 @@ public class AmountTest {
     }
 
     /**
+     * One of the tests. Tests if expectedResult is equal to result.
      *
      * @throws Exception
      */
@@ -195,6 +203,7 @@ public class AmountTest {
     }
 
     /**
+     * One of the tests. Tests if expectedResult is equal to result.
      *
      * @throws Exception
      */

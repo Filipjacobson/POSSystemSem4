@@ -8,12 +8,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- *
+ * Test for class OperationFailureException
  */
 public class OperationFailureExceptionTest {
     private Controller contr;
+
     /**
-     *
+     * Things to set up before test.
      */
     @Before
     public void setUp(){
@@ -22,7 +23,7 @@ public class OperationFailureExceptionTest {
     }
 
     /**
-     *
+     * Things to clean up after test.
      */
     @After
     public void tearDown(){
@@ -31,6 +32,7 @@ public class OperationFailureExceptionTest {
 
     /**
      * Checked exception.
+     * Testing that the correct exception is thrown. Tests if expectedResult is equal to result.
      *
      * @throws Exception
      */

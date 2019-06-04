@@ -7,13 +7,13 @@ import org.junit.Test;
 import util.ItemIdentifier;
 
 /**
- *
+ * Test for class NoSuchItemIdentifierException.
  */
 public class NoSuchItemIdentifierExceptionTest {
     private InventorySystem inventorySystem;
 
     /**
-     *
+     * Things to set up before test.
      */
     @Before
     public void setUp(){
@@ -21,7 +21,7 @@ public class NoSuchItemIdentifierExceptionTest {
     }
 
     /**
-     *
+     * Things to clean up after test.
      */
     @After
     public void tearDown(){
@@ -29,6 +29,7 @@ public class NoSuchItemIdentifierExceptionTest {
     }
 
     /**
+     * Testing that the correct exception is thrown. Tests if expectedResult is equal to result.
      *
      * @throws Exception
      */
