@@ -29,7 +29,7 @@ public class NoSuchItemIdentifierExceptionTest {
     }
 
     /**
-     * Testing that the correct exception is thrown. Tests if expectedResult is equal to result.
+     * Testing that NoSuchItemIdentifierException is thrown. Tests if expectedResult is equal to result.
      *
      * @throws Exception
      */

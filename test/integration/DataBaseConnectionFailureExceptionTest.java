@@ -30,7 +30,7 @@ public class DataBaseConnectionFailureExceptionTest {
     }
 
     /**
-     * Testing that the correct exception is thrown. Tests if expectedResult is equal to result.
+     * Testing that DatabaseConnectionFailureException is thrown. Tests if expectedResult is equal to result.
      *
      * @throws DatabaseConnectionFailureException
      */

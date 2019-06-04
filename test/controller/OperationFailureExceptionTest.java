@@ -32,7 +32,7 @@ public class OperationFailureExceptionTest {
 
     /**
      * Checked exception.
-     * Testing that the correct exception is thrown. Tests if expectedResult is equal to result.
+     * Testing that OperationFailureException is thrown. Tests if expectedResult is equal to result.
      *
      * @throws Exception
      */
